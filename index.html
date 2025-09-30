@@ -25,10 +25,11 @@
         <span class="menu-underline" aria-hidden="true"></span>
       </div>
 
-      <!-- Featured (optional content) -->
+      <!-- Featured (one photo + list) -->
       <section class="featured">
         <h3 class="featured-title gold-text">🍽️ Featured</h3>
-        <div class="food-grid" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));">
+        <div class="food-grid">
+          <!-- Single photo card -->
           <article class="food-card">
             <img src="./images/grilled-jumbo-prawn-11000.jpg" alt="Grilled Jumbo Prawn">
             <div class="food-info">
@@ -36,27 +37,24 @@
               <p class="gold-text">₦11,000</p>
             </div>
           </article>
-          <article class="food-card">
-            <img src="./images/maxseafood-in-cream-sauce-13000.jpg" alt="Maxseafood in cream sauce">
-            <div class="food-info">
-              <h4 class="gold-text">Maxseafood in cream sauce</h4>
-              <p class="gold-text">₦13,000</p>
-            </div>
-          </article>
-          <article class="food-card">
-            <img src="./images/china-pot-with-rice-15000.jpg" alt="China Pot with Rice">
-            <div class="food-info">
-              <h4 class="gold-text">China Pot with Rice</h4>
-              <p class="gold-text">₦15,000</p>
-            </div>
-          </article>
-          <article class="food-card">
-            <img src="./images/chicken-salad-6000.jpg" alt="Chicken salad">
-            <div class="food-info">
-              <h4 class="gold-text">Chicken salad</h4>
-              <p class="gold-text">₦6,000</p>
-            </div>
-          </article>
+
+          <!-- The rest as a simple list -->
+          <div class="food-list-wrap" style="width:100%;">
+            <ul class="food-list" style="list-style:none;margin:0;padding:0;display:grid;gap:.6rem;">
+              <li style="display:flex;justify-content:space-between;align-items:center;padding:.55rem .75rem;background:#121212;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.45);">
+                <span class="gold-text">Maxseafood in cream sauce</span>
+                <span class="gold-text">₦13,000</span>
+              </li>
+              <li style="display:flex;justify-content:space-between;align-items:center;padding:.55rem .75rem;background:#121212;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.45);">
+                <span class="gold-text">China Pot with Rice</span>
+                <span class="gold-text">₦15,000</span>
+              </li>
+              <li style="display:flex;justify-content:space-between;align-items:center;padding:.55rem .75rem;background:#121212;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.45);">
+                <span class="gold-text">Chicken salad</span>
+                <span class="gold-text">₦6,000</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
