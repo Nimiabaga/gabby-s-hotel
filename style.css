@@ -6,6 +6,7 @@
    - Self-hosted Cinzel for a luxury serif look
 ========================================================= */
 
+
 /* -----------------------
    Brand tokens (from logo)
    #d0b036 observed; create highlight and deep base around it
@@ -19,6 +20,7 @@
   --card: #121212;      /* subtle surface card */
   --bar-h: 56px;        /* bottom nav height */
 }
+
 
 /* -----------------------
    Cinzel (self-hosted)
@@ -34,6 +36,7 @@
   font-weight: 700; font-style: normal; font-display: swap;
 }
 
+
 /* -----------------------
    Base
 ----------------------- */
@@ -47,6 +50,7 @@ body{
   padding-bottom: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px)); /* safe area */
 }
 
+
 /* -----------------------
    Two‑tone gold text like the logo
    Uses background-clip: text + transparent fill
@@ -58,6 +62,7 @@ body{
   color: transparent;            /* required for gradient text */
   text-shadow: 0 0 16px rgba(240, 210, 100, .18);
 }
+
 
 /* -----------------------
    HERO (logo only) + tagline glow
@@ -93,6 +98,7 @@ body{
   pointer-events: none;
 }
 
+
 /* -----------------------
    MENU title (clean, centered)
 ----------------------- */
@@ -120,23 +126,29 @@ body{
               transparent 85%);
 }
 
+
 /* -----------------------
    Featured grid (optional content)
 ----------------------- */
 .featured-title{ text-align: center; margin: .6rem 0 0; }
+
+/* UPDATED: switch to centered 2‑column Grid on desktop */
 .food-grid{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
   gap: 1rem;
   padding: 1rem;
   padding-bottom: 4rem;
+  max-width: 1080px;    /* keep from stretching across huge viewports */
+  margin: 0 auto;       /* center the grid container */
+  justify-items: stretch; /* cards fill each column */
 }
+
 .food-card{
   background: var(--card);
   border-radius: 12px;
-  width: calc(50% - 1rem);
-  max-width: 180px;
+  width: 100%;          /* fill the grid column */
+  max-width: none;      /* remove the old 180px cap */
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(0,0,0,.45);
   transition: transform .25s ease, filter .25s ease;
@@ -151,6 +163,7 @@ body{
 .food-info{ padding: .45rem .5rem .65rem; line-height: 1.12; }
 .food-info h4{ margin: .15rem 0; font-size: .92rem; }
 .food-info p{ margin: 0; font-weight: 900; font-size: 1.22rem; }
+
 
 /* -----------------------
    Bottom Navigation (safe-area aware)
@@ -181,17 +194,21 @@ body{
   box-shadow: inset 0 -2px 0 rgba(255, 214, 120, .85);
 }
 
+
 /* -----------------------
    Responsive
 ----------------------- */
 @media (max-width: 600px){
   .logo{ width: 210px; }
-  .food-card{ width: 48%; max-width: none; }
+  /* keep two-up on small tablets/phones */
+  .food-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 400px){
   .logo{ width: 180px; }
-  .food-card{ width: 100%; }
+  /* single column on very small screens */
+  .food-grid{ grid-template-columns: 1fr; }
 }
+
 
 /* -----------------------
    Reduced motion
