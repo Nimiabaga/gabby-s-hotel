@@ -14,8 +14,17 @@
   --gold-top:  #f3e7a0; /* lighter highlight */
   --gold-base: #8c6a13; /* deeper base for depth */
 
+  /* structural / surface tokens */
   --bg: #000000;        /* pure black canvas */
-  --card: #121212;      /* subtle surface card */
+  --card: #121212;      /* subtle surface card (mid) */
+  --card-dark: #0b0b0b; /* darker surface used for heavy panels */
+  --card-darker: #0f0f0f;/* slightly different dark used on drinks */
+  --muted: #171717;     /* muted dark used in subtle gradients */
+
+  /* text tokens */
+  --text: #e8d79a;      /* default warm text */
+  --price: #ffffff;     /* price/strong contrast color */
+
   --bar-h: 56px;        /* bottom nav height */
 }
 
@@ -41,13 +50,13 @@ html, body{ height: 100%; }
 body{
   margin: 0;
   background: var(--bg);
-  color: #e8d79a;              /* only used if gradient text not applied */
+  color: var(--text);
   font-family: "Cinzel", serif;
-  padding-bottom: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px)); /* safe area */
+  padding-bottom: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px));
 }
 
 /* -----------------------
-   Two-tone gold text like the logo
+   Two-tone gold text
 ----------------------- */
 .gold-text{
   background: linear-gradient(180deg, var(--gold-top) 0%, var(--gold-mid) 48%, var(--gold-base) 100%);
@@ -58,7 +67,7 @@ body{
 }
 
 /* -----------------------
-   HERO (logo only) + tagline glow
+   HERO
 ----------------------- */
 .hero{
   display: grid;
@@ -79,22 +88,11 @@ body{
   font-size: .98rem;
   letter-spacing: .02em;
 }
-.tagline-glow{
-  position: relative;
-  display: block;
-  width: 260px; height: 12px;
-  margin: .2rem auto 0;
-  border-radius: 999px;
-  background: radial-gradient(60% 140% at 50% 50%,
-              rgba(255, 214, 120, .35), rgba(255, 214, 120, 0) 70%);
-  pointer-events: none;
-}
 
 /* -----------------------
-   MENU title (clean, centered)
+   MENU title
 ----------------------- */
 .menu-title{
-  position: relative;
   text-align: center;
   margin: .4rem auto .8rem;
   padding: .4rem 1rem .7rem;
@@ -118,11 +116,25 @@ body{
 }
 
 /* -----------------------
-   Featured grid (cards)
+   Featured wrapper & title
+   Ensure the featured heading and grid sit centered on wide viewports
 ----------------------- */
-.featured-title{ text-align: center; margin: .6rem 0 0; }
+.featured{
+  max-width: 1080px;
+  margin: 0 auto 0.5rem;
+  padding: 0 1rem;
+  text-align: center; /* centers the emoji + text */
+}
+.featured-title{
+  margin: 0 0 .6rem;
+  font-weight: 900;
+  font-size: clamp(1.05rem, 3.6vw, 1.4rem);
+  letter-spacing: .06em;
+}
 
-/* ✅ 2×2 layout on phones; centered container */
+/* -----------------------
+   Featured grid
+----------------------- */
 .food-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -131,18 +143,11 @@ body{
   padding-bottom: 4rem;
   max-width: 1080px;
   margin: 0 auto;
-  justify-items: stretch;
 }
-
-/* -----------------------
-   Food/drink cards — depth + ring
------------------------ */
 .food-card{
-  position: relative;
   border-radius: 14px;
-  border: 1px solid transparent;
   background:
-    linear-gradient(180deg, #151515, #0b0b0b) padding-box,
+    linear-gradient(180deg, var(--card) 0%, var(--card-dark) 100%) padding-box,
     linear-gradient(180deg, rgba(243,231,160,.35), rgba(208,176,54,.28) 55%, rgba(140,106,19,.28)) border-box;
   overflow: hidden;
   box-shadow:
@@ -163,172 +168,135 @@ body{
   height: 150px;
   object-fit: cover;
   display: block;
-  transition: transform .45s ease;
 }
-.food-card:hover img{ transform: scale(1.03); }
-
 .food-info{
   padding: .6rem .65rem .8rem;
-  line-height: 1.14;
 }
-.food-info h4{
-  margin: .15rem 0 .3rem;
-  font-size: .98rem;
-}
-
-/* Default food page: gold name + white price */
-.food-info h4{ 
-  background: linear-gradient(180deg, var(--gold-top), var(--gold-mid) 48%, var(--gold-base));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 16px rgba(240,210,100,.18);
-}
+.food-info h4{ margin: .15rem 0 .3rem; font-size: .98rem; }
 .food-info p.gold-text{
-  color: #ffffff !important;
+  color: var(--price) !important;
   background: none !important;
-  -webkit-background-clip: initial !important;
-  background-clip: initial !important;
-  text-shadow: none !important;
   font-weight: 900;
   font-size: 1.24rem;
-  letter-spacing: .01em;
   margin: 0;
 }
 
 /* -----------------------
-   Category pills (Menu toggle) — global baseline
+   Swagged-out Category Pills
 ----------------------- */
 .menu-toggle{
-  display:flex; justify-content:center; align-items:center;
-  gap:.6rem; flex-wrap:wrap;
-  margin:1rem auto 1.1rem; max-width:1080px; padding:0 .6rem;
+  display:flex; justify-content:center; flex-wrap:wrap;
+  gap:.7rem;
+  margin:1rem auto .9rem; max-width:1080px;
+  padding:.25rem .8rem .6rem;
 }
 .menu-toggle a{
-  position: relative; isolation: isolate;
-  border-radius: 12px;
-  border: 1px solid rgba(208,176,54,.55);
-  padding: .55rem 1rem;
-  font-weight: 800; letter-spacing: .01em; text-decoration: none;
-  color:#1b1302;
-  background: linear-gradient(180deg, var(--gold-top), var(--gold-mid) 52%, var(--gold-base));
-  box-shadow: 0 12px 18px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.35);
-  transition: transform .08s ease, filter .18s ease, box-shadow .18s ease;
+  position:relative;
+  padding:.62rem 1.1rem;
+  border-radius:14px;
+  background:
+    linear-gradient(180deg, var(--muted) 0%, #0e0e0e 100%) padding-box,
+    linear-gradient(180deg, rgba(243,231,160,.35), rgba(208,176,54,.25) 55%, rgba(140,106,19,.25)) border-box;
+  border:1px solid transparent;
+  font-weight:900; letter-spacing:.02em;
+  color:#e8d79a; text-decoration:none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05),
+              0 6px 16px rgba(0,0,0,.35);
+  transition: all .2s ease;
 }
-.menu-toggle a:hover{ filter:brightness(1.05); box-shadow:0 14px 22px rgba(0,0,0,.45), 0 0 10px rgba(232,193,49,.22); }
-.menu-toggle a:active{ transform:scale(.98); }
+.menu-toggle a::before{
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0) 40%);
+  mix-blend-mode:screen; opacity:.7;
+}
+.menu-toggle a:hover{
+  transform:translateY(-1px); filter:brightness(1.03);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07),
+              0 12px 24px rgba(0,0,0,.55),
+              0 0 14px rgba(243,231,160,.18);
+}
+.menu-toggle a:active{
+  transform:scale(.985);
+  box-shadow: inset 0 -2px 0 rgba(208,176,54,.35),
+              0 6px 12px rgba(0,0,0,.45);
+}
 .menu-toggle a.active{
-  filter:brightness(1.07);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 14px 30px rgba(0,0,0,.6), 0 0 18px rgba(243,231,160,.22);
+  filter:brightness(1.06);
+  border:1px solid rgba(243,231,160,.5);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08),
+              0 14px 28px rgba(0,0,0,.6),
+              0 0 18px rgba(243,231,160,.22);
+}
+.menu-toggle a:focus-visible{
+  outline:none;
+  box-shadow: 0 0 0 2px #000,
+              0 0 0 3px rgba(243,231,160,.65),
+              0 10px 22px rgba(0,0,0,.5);
+}
+@media (max-width:520px){
+  .menu-toggle{ gap:.5rem; }
+  .menu-toggle a{ padding:.56rem .9rem; border-radius:12px; }
 }
 
 /* -----------------------
-   Bottom Navigation (safe-area aware)
+   Bottom Navigation
 ----------------------- */
 .bottom-nav{
-  position: fixed;
-  left: 0; right: 0; bottom: 0;
-  height: var(--bar-h);
-  background: #0b0b0b;
-  border-top: 1px solid #1d1d1d;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: .5rem 0 calc(.25rem + env(safe-area-inset-bottom, 0px));
-  z-index: 1000;
+  position:fixed; left:0; right:0; bottom:0;
+  height:var(--bar-h);
+  background: var(--card-dark);
+  border-top:1px solid rgba(29,29,29,1);
+  display:flex; justify-content:space-around; align-items:center;
+  padding:.5rem 0 calc(.25rem + env(safe-area-inset-bottom,0px));
 }
 .bottom-nav a{
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 20px;
-  padding: .6rem;
-  color: var(--gold-mid); /* ensure gold, avoid purple visited */
+  text-decoration:none;
+  font-weight:700; font-size:20px;
+  color:var(--gold-mid);
 }
-.bottom-nav a.active{ box-shadow: inset 0 -2px 0 rgba(255, 214, 120, .85); }
-.bottom-nav a:hover,
-.bottom-nav a:focus-visible,
-.bottom-nav a:active{
-  text-shadow: 0 0 12px rgba(255, 214, 120, .35);
-  box-shadow: inset 0 -2px 0 rgba(255, 214, 120, .85);
-}
+.bottom-nav a.active{ box-shadow: inset 0 -2px 0 rgba(255,214,120,.85); }
 
 /* -----------------------
-   Responsive (home defaults)
+   DRINKS PAGE OVERRIDES
 ----------------------- */
-@media (max-width: 600px){
-  .logo{ width: 210px; }
-  .food-grid{ grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 400px){
-  .logo{ width: 180px; }
-}
-
-/* -----------------------
-   Reduced motion
------------------------ */
-@media (prefers-reduced-motion: reduce){
-  *{ animation: none !important; transition: none !important; }
-}
-
-/* =========================================================
-   DRINKS PAGE OVERRIDES (scoped to body.drinks)
-   - Keeps home layout intact
-   - Maximus-style grid 4/3/2
-   - GOLD name + WHITE price (final fix)
-   - Tighter spacing between name and price
-========================================================= */
-body.drinks header{ padding: 18px 16px 6px; }
-
-body.drinks .menu-title{ margin:.3rem auto .6rem; }
-body.drinks .menu-title h2{ letter-spacing:.18em; }
-
-/* grid 4/3/2 */
 body.drinks .food-grid{
   max-width:1080px; gap:16px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-@media (max-width: 900px){ body.drinks .food-grid{ grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 680px){ body.drinks .food-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width:900px){ body.drinks .food-grid{ grid-template-columns: repeat(3,1fr);} }
+@media (max-width:680px){ body.drinks .food-grid{ grid-template-columns: repeat(2,1fr);} }
 
-/* cards */
 body.drinks .food-card{
-  background:#0f0f0f; border:1px solid #262626; border-radius:16px;
-  min-height:280px; overflow:hidden;
-  box-shadow:0 8px 18px rgba(0,0,0,.35);
+  background: var(--card-darker); border:1px solid #262626; border-radius:16px;
 }
-body.drinks .food-card img{ width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
-body.drinks .food-info{
-  background:#111; padding:10px 12px 12px; margin-top:auto; border-top:1px solid #1d1d1d;
-}
+body.drinks .food-info{ background:var(--card); padding:10px 12px 12px; border-top:1px solid #1d1d1d; }
 
-/* name = gold */
+/* gold names */
 body.drinks .food-info h4{
-  margin: 0 0 2px;
-  line-height: 1.2;
+  margin:0 0 2px;
   font-size:.98rem;
-  background: linear-gradient(180deg, var(--gold-top), var(--gold-mid) 48%, var(--gold-base)) !important;
-  -webkit-background-clip:text !important;
-  background-clip:text !important;
-  color:transparent !important;
-  text-shadow:0 0 16px rgba(240,210,100,.18) !important;
+  background:linear-gradient(180deg,var(--gold-top),var(--gold-mid) 48%,var(--gold-base));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  text-shadow:0 0 16px rgba(240,210,100,.18);
 }
-
-/* price = white */
+/* white prices */
 body.drinks .food-info p{
-  margin: 0;
-  line-height: 1.1;
-  font-size: 1rem;
-  color:#ffffff !important;
+  color: var(--price) !important;
+
   background:none !important;
-  -webkit-background-clip: initial !important;
-  background-clip: initial !important;
-  text-shadow:none !important;
   font-weight:900;
+  font-size:1.24rem;
+  margin:0;
 }
 
-/* notice box */
-body.drinks .tray-note{
-  max-width:1080px; margin:1.2rem auto 5.2rem; padding:.8rem 1rem;
-  color:#cfcfcf; background:#0b0b0b; border:1px solid #1d1d1d; border-radius:12px;
-  font-size:.9rem; line-height:1.35;
+/* -----------------------
+   Accessibility & motion
+----------------------- */
+@media (prefers-reduced-motion: reduce){
+  *{ transition: none !important; animation: none !important; }
 }
+
+/* Small focus polish for keyboard users */
+a:focus-visible, button:focus-visible{ outline: none; box-shadow: 0 0 0 3px rgba(243,231,160,.6); border-radius: 6px; }
