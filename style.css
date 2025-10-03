@@ -8,7 +8,6 @@
 
 /* -----------------------
    Brand tokens (from logo)
-   #d0b036 observed; create highlight and deep base around it
 ----------------------- */
 :root{
   --gold-mid:  #d0b036; /* main logo gold */
@@ -49,13 +48,12 @@ body{
 
 /* -----------------------
    Two-tone gold text like the logo
-   Uses background-clip: text + transparent fill
 ----------------------- */
 .gold-text{
   background: linear-gradient(180deg, var(--gold-top) 0%, var(--gold-mid) 48%, var(--gold-base) 100%);
-  -webkit-background-clip: text; /* WebKit */
-  background-clip: text;         /* Standard */
-  color: transparent;            /* required for gradient text */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   text-shadow: 0 0 16px rgba(240, 210, 100, .18);
 }
 
@@ -73,7 +71,6 @@ body{
   width: clamp(190px, 44vw, 320px);
   height: auto;
   object-fit: contain;
-  /* stronger aura to make it pop on black */
   filter: drop-shadow(0 14px 42px rgba(255,216,110,.26))
           drop-shadow(0 0 26px rgba(255,224,148,.24));
 }
@@ -125,8 +122,7 @@ body{
 ----------------------- */
 .featured-title{ text-align: center; margin: .6rem 0 0; }
 
-/* ✅ Force 2×2 layout on mobile for the home page,
-   centered on larger screens */
+/* ✅ 2×2 layout on phones; centered container */
 .food-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -147,7 +143,7 @@ body{
   border: 1px solid transparent;
   background:
     linear-gradient(180deg, #151515, #0b0b0b) padding-box,
-    linear-gradient(180deg, rgba(243,231,160,.35), rgba(208,176,54,.28) 55%, rgba(140,106,19,.28)) border-box; /* gold ring */
+    linear-gradient(180deg, rgba(243,231,160,.35), rgba(208,176,54,.28) 55%, rgba(140,106,19,.28)) border-box;
   overflow: hidden;
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,.05),
@@ -180,7 +176,14 @@ body{
   font-size: .98rem;
 }
 
-/* Price: force white so color accents pop inside cards by default */
+/* Default food page: gold name + white price */
+.food-info h4{ 
+  background: linear-gradient(180deg, var(--gold-top), var(--gold-mid) 48%, var(--gold-base));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 16px rgba(240,210,100,.18);
+}
 .food-info p.gold-text{
   color: #ffffff !important;
   background: none !important;
@@ -194,70 +197,29 @@ body{
 }
 
 /* -----------------------
-   Category pills (Menu toggle) — global style
+   Category pills (Menu toggle) — global baseline
 ----------------------- */
 .menu-toggle{
-  display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;
-  margin:1rem auto 1.2rem; max-width:1080px; padding:.35rem .9rem;
-  overflow-x:auto; scroll-snap-type:x proximity;
+  display:flex; justify-content:center; align-items:center;
+  gap:.6rem; flex-wrap:wrap;
+  margin:1rem auto 1.1rem; max-width:1080px; padding:0 .6rem;
 }
 .menu-toggle a{
   position: relative; isolation: isolate;
-  border-radius: 14px;
-  border: 1px solid transparent;
-  background:
-    linear-gradient(180deg, #171717, #0e0e0e) padding-box,
-    linear-gradient(180deg, rgba(243,231,160,.88), rgba(208,176,54,.82) 52%, rgba(140,106,19,.82)) border-box;
-  color: inherit;
-  padding: .72rem 1.1rem;
-  font-weight: 800; letter-spacing: .02em; text-decoration: none;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.06),
-    0 10px 28px rgba(0,0,0,.55);
-  transition: transform .12s ease, box-shadow .22s ease, filter .22s ease, background .22s ease;
-  scroll-snap-align: start;
-  background-color: rgb(20 20 20 / 72%);
-  -webkit-backdrop-filter: saturate(140%) blur(6px);
-  backdrop-filter: saturate(140%) blur(6px);
+  border-radius: 12px;
+  border: 1px solid rgba(208,176,54,.55);
+  padding: .55rem 1rem;
+  font-weight: 800; letter-spacing: .01em; text-decoration: none;
+  color:#1b1302;
+  background: linear-gradient(180deg, var(--gold-top), var(--gold-mid) 52%, var(--gold-base));
+  box-shadow: 0 12px 18px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.35);
+  transition: transform .08s ease, filter .18s ease, box-shadow .18s ease;
 }
-.menu-toggle a::after{
-  content: "";
-  position: absolute;
-  inset: 0; border-radius: inherit; padding: 1.5px;
-  background: conic-gradient(from var(--_angle, 0deg),
-               rgba(243,231,160,0) 0deg,
-               rgba(243,231,160,.35) 60deg,
-               rgba(243,231,160,0) 120deg);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  pointer-events: none;
-  opacity: .9;
-  z-index: -1;
-}
-@keyframes sweep { to { --_angle: 360deg; } }
-.menu-toggle a:hover{ transform: translateY(-1px); filter: brightness(1.04); }
-.menu-toggle a:hover::after{ animation: sweep 2.2s linear infinite; }
-
-.menu-toggle a[aria-current="page"],
+.menu-toggle a:hover{ filter:brightness(1.05); box-shadow:0 14px 22px rgba(0,0,0,.45), 0 0 10px rgba(232,193,49,.22); }
+.menu-toggle a:active{ transform:scale(.98); }
 .menu-toggle a.active{
-  filter: brightness(1.05);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.08),
-    0 14px 30px rgba(0,0,0,.6),
-    0 0 22px rgba(243,231,160,.25);
-}
-
-.menu-toggle a:focus-visible{
-  outline: none;
-  box-shadow:
-    0 0 0 2px rgba(243,231,160,.95),
-    0 0 26px rgba(243,231,160,.35),
-    inset 0 1px 0 rgba(255,255,255,.06);
-}
-
-@media (prefers-reduced-motion: reduce){
-  .menu-toggle a:hover::after{ animation: none; }
+  filter:brightness(1.07);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 14px 30px rgba(0,0,0,.6), 0 0 18px rgba(243,231,160,.22);
 }
 
 /* -----------------------
@@ -311,37 +273,60 @@ body{
 /* =========================================================
    DRINKS PAGE OVERRIDES (scoped to body.drinks)
    - Keeps home layout intact
-   - Matches brand golds
    - Maximus-style grid 4/3/2
+   - GOLD name + WHITE price (final fix)
+   - Tighter spacing between name and price
 ========================================================= */
-
 body.drinks header{ padding: 18px 16px 6px; }
 
-body.drinks .menu-banner{ text-align:center; margin:.2rem 0 .4rem; }
-body.drinks .menu-banner h2{
-  margin:0; letter-spacing:.18em; font-weight:900; text-transform:uppercase;
-}
-body.drinks .menu-banner::after{
-  content:""; display:block; width:100%; height:1px;
-  background:#1d1d1d; box-shadow:0 1px 0 rgba(232,193,49,.25) inset;
-  margin:.6rem 0 0;
-}
+body.drinks .menu-title{ margin:.3rem auto .6rem; }
+body.drinks .menu-title h2{ letter-spacing:.18em; }
 
-/* Category pills already styled globally; nothing else needed here */
-
-/* Grid: 4/3/2 for drinks page */
-body.drinks .food-grid{ max-width:1080px; gap:16px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+/* grid 4/3/2 */
+body.drinks .food-grid{
+  max-width:1080px; gap:16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 @media (max-width: 900px){ body.drinks .food-grid{ grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 680px){ body.drinks .food-grid{ grid-template-columns: repeat(2, 1fr); } }
 
-/* Cards: taller look + image ratio 4:3 */
-body.drinks .food-card{ background:#0f0f0f; border:1px solid #262626; border-radius:16px; min-height:280px; }
-body.drinks .food-card img{ height:auto; aspect-ratio:4/3; object-fit:cover; }
-body.drinks .food-info{ background:#111; border-top:1px solid #1d1d1d; padding:10px 12px 12px; margin-top:auto; }
-body.drinks .food-info h4{ margin:.1rem 0 .25rem; font-size:.98rem; }
-body.drinks .food-info p{ margin:0; font-size:1.05rem; font-weight:900; }
+/* cards */
+body.drinks .food-card{
+  background:#0f0f0f; border:1px solid #262626; border-radius:16px;
+  min-height:280px; overflow:hidden;
+  box-shadow:0 8px 18px rgba(0,0,0,.35);
+}
+body.drinks .food-card img{ width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+body.drinks .food-info{
+  background:#111; padding:10px 12px 12px; margin-top:auto; border-top:1px solid #1d1d1d;
+}
 
-/* Notice box */
+/* name = gold */
+body.drinks .food-info h4{
+  margin: 0 0 2px;
+  line-height: 1.2;
+  font-size:.98rem;
+  background: linear-gradient(180deg, var(--gold-top), var(--gold-mid) 48%, var(--gold-base)) !important;
+  -webkit-background-clip:text !important;
+  background-clip:text !important;
+  color:transparent !important;
+  text-shadow:0 0 16px rgba(240,210,100,.18) !important;
+}
+
+/* price = white */
+body.drinks .food-info p{
+  margin: 0;
+  line-height: 1.1;
+  font-size: 1rem;
+  color:#ffffff !important;
+  background:none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  text-shadow:none !important;
+  font-weight:900;
+}
+
+/* notice box */
 body.drinks .tray-note{
   max-width:1080px; margin:1.2rem auto 5.2rem; padding:.8rem 1rem;
   color:#cfcfcf; background:#0b0b0b; border:1px solid #1d1d1d; border-radius:12px;

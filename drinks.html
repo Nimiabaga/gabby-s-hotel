@@ -7,6 +7,25 @@
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Page-only tweaks to get the Maximus feel -->
+  <style>
+    .menu-toggle{
+      display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;
+      margin:1rem auto 1.2rem;max-width:980px;padding:0 .6rem;
+    }
+    .menu-toggle a{
+      padding:.55rem 1rem;border-radius:8px;font-weight:800;text-decoration:none;
+      background:#0f0f0f;border:1px solid var(--gold-deep);
+      color:var(--gold-solid);transition:box-shadow .2s ease, transform .08s ease;
+    }
+    .menu-toggle a:hover{ box-shadow:0 0 10px rgba(232,193,49,.22); }
+    .menu-toggle a:active{ transform:scale(.98);
+      box-shadow:inset 0 -2px 0 var(--gold-mid),0 0 10px rgba(232,193,49,.45); }
+
+    /* Optional: keep prices snug like your home cards */
+    .food-info .gold-text{ font-weight:700; }
+  </style>
 </head>
 <body class="drinks">
   <!-- hero matches home -->
@@ -22,60 +41,57 @@
   </div>
 
   <!-- category pills -->
-  <div class="menu-toggle">
-    <a href="./soft-drinks.html">Soft Drinks</a>
-    <a href="./juice.html">Juice</a>
-    <a href="./energy-drinks.html">Energy Drinks</a>
-
+  <nav class="menu-toggle" aria-label="Drink categories">
     <a href="./whiskey.html">Whiskey</a>
     <a href="./liquor.html">Liquor</a>
     <a href="./bitters.html">Bitters</a>
-    <a href="./beer-mixers.html">Beer-Mixers</a>
+    <a href="./beer.html">Beers</a>
+    <a href="./mixers.html">Soft/Mixers</a>
     <a href="./wines.html">Wines</a>
     <a href="./champagne.html">Champagne</a>
 
     <a href="./vodka.html">Vodka</a>
     <a href="./cognac.html">Cognac</a>
-    <a href="./gin-rum.html">Gin &amp; Rum</a>
+    <a href="./gin.html">Gin/Rum</a>
 
     <a href="./cocktails.html">Cocktails</a>
     <a href="./smoothies.html">Smoothies</a>
     <a href="./milkshakes.html">Milkshakes</a>
     <a href="./fresh-juice.html">Fresh Juice</a>
-  </div>
+  </nav>
 
   <!-- 4-feature preview -->
   <main role="main">
     <div class="food-grid">
       <article class="food-card">
-        <img src="images/macallan-double-cask-12yrs.jpg" alt="Macallan Double Cask 12yrs" />
+        <img src="images/macallan-double-cask-12yrs.jpg" alt="Macallan Double Cask (12yrs)" />
         <div class="food-info">
-          <h4>Macallan Double Cask (12yrs)</h4>
-          <p class="gold-text">₦350,000</p>
+          <h4 class="food-name gold-text">Macallan Double Cask (12yrs)</h4>
+          <p class="food-price gold-text">₦350,000</p>
         </div>
       </article>
 
       <article class="food-card">
         <img src="images/hennessy-vsop.jpg" alt="Hennessy VSOP" />
         <div class="food-info">
-          <h4>Hennessy VSOP</h4>
-          <p class="gold-text">₦220,000</p>
+          <h4 class="food-name gold-text">Hennessy VSOP</h4>
+          <p class="food-price gold-text">₦220,000</p>
         </div>
       </article>
 
       <article class="food-card">
         <img src="images/beer.jpg" alt="Beer" />
         <div class="food-info">
-          <h4>Beer</h4>
-          <p class="gold-text">₦2,000</p>
+          <h4 class="food-name gold-text">Beer</h4>
+          <p class="food-price gold-text">₦2,000</p>
         </div>
       </article>
 
       <article class="food-card">
         <img src="images/red-bull.jpg" alt="Red Bull" />
         <div class="food-info">
-          <h4>Red Bull</h4>
-          <p class="gold-text">₦3,000</p>
+          <h4 class="food-name gold-text">Red Bull</h4>
+          <p class="food-price gold-text">₦3,000</p>
         </div>
       </article>
     </div>
@@ -90,6 +106,7 @@
     <a href="./index.html">Home</a>
     <a href="./food.html">Food</a>
     <a href="./drinks.html" class="active">Drinks</a>
+    <a href="./index.html">Rooms</a>
     <a href="./contact.html">Contact</a>
   </nav>
 </body>
