@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Whiskey — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    .food-grid .tray-note{
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+
+    /* Back button – pill & color only (per your sample) */
+    .back-btn{
+      display:inline-block;
+      margin: 2rem auto 5rem;      /* clears fixed bottom nav */
+      padding:.78rem 1.55rem;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.98rem;
+      text-decoration:none;
+
+      /* sample look: dark -> amber gradient, subtle gold ring */
+      background: linear-gradient(180deg, #131008 0%, #a66600 100%);
+      border:1px solid rgba(243,231,160,.35);
+      color:#f3e7a0;               /* warm gold text */
+      text-shadow:0 1px 0 rgba(0,0,0,.55);
+
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.18),
+        0 8px 16px rgba(0,0,0,.35);
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      position:relative;
+      z-index:5;
+    }
+    .back-btn:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.03);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.2),
+        0 12px 22px rgba(0,0,0,.45);
+    }
+    .back-btn:active{
+      transform:translateY(0);
+      box-shadow:
+        inset 0 -2px 0 rgba(208,176,54,.25),
+        0 6px 12px rgba(0,0,0,.35);
+    }
+  </style>
+</head>
+<body class="drinks">
+  <!-- hero matches home -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">WHISKEY</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <main role="main">
+    <div class="food-grid">
+      <!-- Use Maximus image names where available; prices are Gabby's -->
+
+      <!-- Macallan Double Cask (12yrs) -->
+      <article class="food-card">
+        <img src="images/macallan-12yrs.jpg" alt="Macallan Double Cask (12yrs)" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Macallan Double Cask (12yrs)</h4>
+          <p class="food-price gold-text">₦350,000</p>
+        </div>
+      </article>
+
+      <!-- Macallan Rare Cask (15yrs) -->
+      <article class="food-card">
+        <img src="images/macallan-rare-cask.jpg" alt="Macallan Rare Cask (15yrs)" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Macallan Rare Cask (15yrs)</h4>
+          <p class="food-price gold-text">₦220,000</p>
+        </div>
+      </article>
+
+      <!-- Jack Daniels -->
+      <article class="food-card">
+        <img src="images/jack-daniels.jpg" alt="Jack Daniels" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Jack Daniels</h4>
+          <p class="food-price gold-text">₦96,000</p>
+        </div>
+      </article>
+
+      <!-- Jameson Black -->
+      <article class="food-card">
+        <img src="images/jameson-black-barrel.jpg" alt="Jameson Black" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Jameson Black</h4>
+          <p class="food-price gold-text">₦136,000</p>
+        </div>
+      </article>
+
+      <!-- Glenfiddich 15yrs -->
+      <article class="food-card">
+        <img src="images/glenfiddich-15yrs.jpg" alt="Glenfiddich 15yrs" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Glenfidich 15yrs</h4>
+          <p class="food-price gold-text">₦326,000</p>
+        </div>
+      </article>
+
+      <!-- Glenfiddich 18yrs -->
+      <article class="food-card">
+        <img src="images/glenfiddich-18yrs.jpg" alt="Glenfiddich 18yrs" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Glenfidich 18yrs</h4>
+          <p class="food-price gold-text">₦483,000</p>
+        </div>
+      </article>
+
+      <!-- Glenfiddich 21yrs -->
+      <article class="food-card">
+        <img src="images/glenfiddich-21yrs.jpg" alt="Glenfiddich 21yrs" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Glenfidich 21yrs</h4>
+          <p class="food-price gold-text">₦600,000</p>
+        </div>
+      </article>
+
+      <!-- Black Label -->
+      <article class="food-card">
+        <img src="images/black-label.jpg" alt="Black Label" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Black Label</h4>
+          <p class="food-price gold-text">₦76,000</p>
+        </div>
+      </article>
+
+      <!-- Singleton 12yrs -->
+      <article class="food-card">
+        <img src="images/singleton-12yrs.jpg" alt="Singleton 12yrs" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Singleton 12yrs</h4>
+          <p class="food-price gold-text">₦120,000</p>
+        </div>
+      </article>
+
+      <!-- William Lawson -->
+      <article class="food-card">
+        <img src="images/william-lawson.jpg" alt="William Lawson" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">William Lawson</h4>
+          <p class="food-price gold-text">₦56,000</p>
+        </div>
+      </article>
+
+      <!-- Jameson Green -->
+      <article class="food-card">
+        <img src="images/jameson-irish-green.jpg" alt="Jameson Green" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Jameson Green</h4>
+          <p class="food-price gold-text">₦80,000</p>
+        </div>
+      </article>
+
+      <!-- Teeling Gram -->
+      <article class="food-card">
+        <img src="images/teeling-gram.jpg" alt="Teeling Gram" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Teeling Gram</h4>
+          <p class="food-price gold-text">₦156,000</p>
+        </div>
+      </article>
+
+      <!-- Teeling Small Batch -->
+      <article class="food-card">
+        <img src="images/teeling-small-batch.jpg" alt="Teeling Small Batch" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Teeling Small Batch</h4>
+          <p class="food-price gold-text">₦116,000</p>
+        </div>
+      </article>
+
+      <!-- The Balvenie 12yrs -->
+      <article class="food-card">
+        <img src="images/balvenie-12yrs.jpg" alt="The Balvenie 12yrs" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">The Balvenie 12yrs</h4>
+          <p class="food-price gold-text">₦180,000</p>
+        </div>
+      </article>
+
+      <!-- Monkey Shoulder -->
+      <article class="food-card">
+        <img src="images/monkey-shoulder.jpg" alt="Monkey Shoulder" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Monkey Shoulder</h4>
+          <p class="food-price gold-text">₦80,000</p>
+        </div>
+      </article>
+
+      <!-- Glenmorangie 10yrs -->
+      <article class="food-card">
+        <img src="images/glenmorangie-10yrs.jpg" alt="Glenmorangie 10yrs" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Glenmorangie 10yrs</h4>
+          <p class="food-price gold-text">₦110,000</p>
+        </div>
+      </article>
+
+      <!-- Tray note -->
+      <div class="tray-note">
+        Alcohol is served to guests 18+ only—drink responsibly.
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <div style="text-align:center;">
+      <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>

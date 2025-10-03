@@ -58,6 +58,27 @@
 
     /* Optional: keep prices snug like your home cards */
     .food-info .gold-text{ font-weight:700; }
+
+    /* --- Tray Note fix: span full grid width --- */
+    .food-grid .tray-note{
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+    .tray-note{
+      box-sizing: border-box;
+      width: min(1120px, 100% - 32px);
+      margin: 1rem auto calc(var(--bar-h) + 1.2rem);
+      padding: .85rem 1.1rem;
+      text-align: center;
+      line-height: 1.35;
+      font-weight: 600;
+      font-size: .95rem;
+      background: rgba(12,12,12,0.88);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.04);
+      color: #d9d9d9;
+    }
   </style>
 </head>
 <body class="drinks">
@@ -82,36 +103,19 @@
     <a href="./mixers.html">Soft/Mixers</a>
     <a href="./wines.html">Wines</a>
     <a href="./champagne.html">Champagne</a>
-
     <a href="./vodka.html">Vodka</a>
     <a href="./cognac.html">Cognac</a>
     <a href="./gin.html">Gin/Rum</a>
-
     <a href="./cocktails.html">Cocktails</a>
     <a href="./smoothies.html">Smoothies</a>
     <a href="./milkshakes.html">Milkshakes</a>
-    
   </nav>
 
   <!-- 4-feature preview -->
   <main role="main">
     <div class="food-grid">
-      <article class="food-card">
-        <img src="images/macallan-double-cask-12yrs.jpg" alt="Macallan Double Cask (12yrs)" />
-        <div class="food-info">
-          <h4 class="food-name gold-text">Macallan Double Cask (12yrs)</h4>
-          <p class="food-price gold-text">₦350,000</p>
-        </div>
-      </article>
 
-      <article class="food-card">
-        <img src="images/hennessy-vsop.jpg" alt="Hennessy VSOP" />
-        <div class="food-info">
-          <h4 class="food-name gold-text">Hennessy VSOP</h4>
-          <p class="food-price gold-text">₦220,000</p>
-        </div>
-      </article>
-
+      <!-- Beer -->
       <article class="food-card">
         <img src="images/beer.jpg" alt="Beer" />
         <div class="food-info">
@@ -126,14 +130,35 @@
         <div class="food-info">
           <h4>Zombie</h4>
           <p>₦8,000</p>
-          <small style="display:block;color:#ccc;margin-top:4px;">Mixed Rum, Apricot Brandy, Falernum Liqueur, Lemon, Orange & Pineapple Juice</small>
+          <small style="display:block;color:#ccc;margin-top:4px;">
+            Mixed Rum, Apricot Brandy, Falernum Liqueur, Lemon, Orange & Pineapple Juice
+          </small>
         </div>
       </div>
 
+      <!-- Macallan -->
+      <article class="food-card">
+        <img src="images/macallan-double-cask-12yrs.jpg" alt="Macallan Double Cask (12yrs)" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Macallan Double Cask (12yrs)</h4>
+          <p class="food-price gold-text">₦350,000</p>
+        </div>
+      </article>
+
+      <!-- Hennessy -->
+      <article class="food-card">
+        <img src="images/hennessy-vsop.jpg" alt="Hennessy VSOP" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Hennessy VSOP</h4>
+          <p class="food-price gold-text">₦220,000</p>
+        </div>
+      </article>
+
       <!-- Tray note -->
       <div class="tray-note">
-         Alcohol is served to guests 18+ only—drink responsibly.
+         Alcohol is served to guests 18+ only — drink responsibly.
       </div>
+
     </div>
   </main>
 
