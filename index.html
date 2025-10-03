@@ -1,60 +1,70 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Home - Gabby's Boutique Hotel & Lounge</title>
 
     <!-- Self-host Cinzel (place WOFF2 in ./fonts) -->
     <link rel="preload" href="./fonts/Cinzel-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./fonts/Cinzel-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <!-- HERO: logo only + single tagline -->
+    <!-- HERO -->
     <header class="hero" role="banner">
-      <img class="logo" src="./images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge">
+      <img class="logo" src="./images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" />
       <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
     </header>
 
     <main role="main">
-      <!-- MENU title (clean) -->
+      <!-- MENU title -->
       <div class="menu-title" aria-label="Menu">
         <h2 class="gold-text">MENU</h2>
         <span class="menu-underline" aria-hidden="true"></span>
       </div>
 
-      <!-- Featured (one photo + list) -->
-      <section class="featured">
-        <h3 class="featured-title gold-text">🍽️ Featured</h3>
+      <!-- Featured: 4 cards (2×2 on mobile) -->
+      <section class="featured" aria-labelledby="featured-heading">
+        <h3 id="featured-heading" class="featured-title gold-text">🍽️ Featured</h3>
+
         <div class="food-grid">
-          <!-- Single photo card -->
+          <!-- Card 1 -->
           <article class="food-card">
-            <img src="./images/grilled-jumbo-prawn-11000.jpg" alt="Grilled Jumbo Prawn">
+            <img src="./images/grilled-jumbo-prawn-11000.jpg" alt="Grilled Jumbo Prawn" />
             <div class="food-info">
-              <h4 class="gold-text">Grilled Jumbo Prawn</h4>
-              <p class="gold-text">₦11,000</p>
+              <h4 class="food-name gold-text">Grilled Jumbo Prawn</h4>
+              <p class="food-price gold-text">₦11,000</p>
             </div>
           </article>
 
-          <!-- The rest as a simple list -->
-          <div class="food-list-wrap" style="width:100%;">
-            <ul class="food-list" style="list-style:none;margin:0;padding:0;display:grid;gap:.6rem;">
-              <li style="display:flex;justify-content:space-between;align-items:center;padding:.55rem .75rem;background:#121212;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.45);">
-                <span class="gold-text">Maxseafood in cream sauce</span>
-                <span class="gold-text">₦13,000</span>
-              </li>
-              <li style="display:flex;justify-content:space-between;align-items:center;padding:.55rem .75rem;background:#121212;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.45);">
-                <span class="gold-text">China Pot with Rice</span>
-                <span class="gold-text">₦15,000</span>
-              </li>
-              <li style="display:flex;justify-content:space-between;align-items:center;padding:.55rem .75rem;background:#121212;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.45);">
-                <span class="gold-text">Chicken salad</span>
-                <span class="gold-text">₦6,000</span>
-              </li>
-            </ul>
-          </div>
+          <!-- Card 2 -->
+          <article class="food-card">
+            <img src="./images/maxseafood-in-cream-sauce-13000.jpg" alt="Maxseafood in cream sauce" />
+            <div class="food-info">
+              <h4 class="food-name gold-text">Maxseafood in cream sauce</h4>
+              <p class="food-price gold-text">₦13,000</p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="food-card">
+            <img src="./images/china-pot-with-rice-15000.jpg" alt="China Pot with Rice" />
+            <div class="food-info">
+              <h4 class="food-name gold-text">China Pot with Rice</h4>
+              <p class="food-price gold-text">₦15,000</p>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="food-card">
+            <img src="./images/chicken-salad-6000.jpg" alt="Chicken salad" />
+            <div class="food-info">
+              <h4 class="food-name gold-text">Chicken salad</h4>
+              <p class="food-price gold-text">₦6,000</p>
+            </div>
+          </article>
         </div>
       </section>
     </main>

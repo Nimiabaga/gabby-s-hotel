@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Food - Gabby's Boutique Hotel & Lounge</title>
+
+    <!-- Self-host Cinzel (place WOFF2 in ./fonts) -->
+    <link rel="preload" href="./fonts/Cinzel-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/Cinzel-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Page-only list styling -->
+    <style>
+      /* Section container */
+      .menu-section{
+        max-width:1080px;
+        margin:0 auto 1.2rem;
+        padding:0 1rem;
+      }
+      .menu-section h3{
+        margin:.8rem 0 .4rem;
+      }
+
+      /* List layout (name — price) */
+      .menu-list{
+        list-style:none;
+        margin:.6rem 0 0;
+        padding:0;
+        display:grid;
+        gap:.6rem;
+      }
+      .menu-item{
+        padding:.65rem .8rem;
+        background: var(--card);
+        border-radius:12px;
+        display:flex;
+        justify-content:space-between;
+        align-items:baseline;
+        gap:.8rem;
+        box-shadow:0 2px 12px rgba(0,0,0,.45);
+      }
+      .menu-item .name{
+        font-weight:700;
+      }
+      .menu-item .price{
+        color:#ffffff;               /* prices set to white */
+        font-weight:900;
+      }
+      .menu-item small{
+        display:block;
+        color:#cfcfcf;
+        opacity:.95;
+        margin-top:.35rem;
+        font-weight:600;
+      }
+
+      /* Tiny divider spacing for sub-groups */
+      .menu-subtitle{
+        margin:.9rem 0 .2rem;
+        opacity:.95;
+        font-size:1rem;
+      }
+
+      /* Improve anchor scroll position (avoid nav overlap) */
+      .anchor-offset{
+        scroll-margin-top: 90px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO -->
+    <header class="hero" role="banner">
+      <img class="logo" src="./images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge">
+      <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+    </header>
+
+    <!-- Title -->
+    <div class="menu-title" aria-label="Menu">
+      <h2 class="gold-text">FOOD MENU</h2>
+      <span class="menu-underline" aria-hidden="true"></span>
+    </div>
+
+    <!-- Category Buttons: anchor links to sections -->
+    <nav class="menu-toggle" aria-label="Food categories">
+      <a href="#starters" class="gold-text">Starters</a>
+      <a href="#breakfast" class="gold-text">Breakfast</a>
+      <a href="#finger-foods" class="gold-text">Finger Foods</a>
+      <a href="#continental" class="gold-text">Continental</a>
+      <a href="#stew" class="gold-text">Stew</a>
+      <a href="#sides" class="gold-text">Sides</a>
+      <a href="#basmati" class="gold-text">Basmati Rice</a>
+      <a href="#extras" class="gold-text">Extras</a>
+      <a href="#stew-sauce" class="gold-text">Stew/Sauce</a>
+      <a href="#proteins" class="gold-text">Proteins</a>
+      <a href="#national" class="gold-text">National</a>
+      <a href="#soups" class="gold-text">Soups</a>
+      <a href="#swallow" class="gold-text">Swallow</a>
+      <a href="#native-specials" class="gold-text">Native Specials</a>
+      <a href="#bbq-grills" class="gold-text">BBQ & Grills</a>
+      <a href="#salads" class="gold-text">Salads</a>
+      <a href="#pepper-soups" class="gold-text">Pepper Soups</a>
+      <a href="#prawn" class="gold-text">Prawn</a>
+      <a href="#fish" class="gold-text">Fish</a>
+      <a href="#pasta" class="gold-text">Pasta</a>
+      <a href="#creamy-bites" class="gold-text">Creamy Bites</a>
+      <a href="#pot-dish" class="gold-text">Pot Dish</a>
+    </nav>
+
+    <main role="main">
+      <!-- Starters -->
+      <section id="starters" class="menu-section anchor-offset">
+        <h3 class="gold-text">Starter</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="name">
+              <span class="gold-text">Sweet corn soup</span>
+              <small>A nutritious, creamy sweet corn soup, seasoned with black pepper and fresh herbs.</small>
+            </div>
+            <span class="price">₦2,500</span>
+          </li>
+          <li class="menu-item">
+            <div class="name">
+              <span class="gold-text">Cream of chicken soup</span>
+            </div>
+            <span class="price">₦2,500</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Breakfast -->
+      <section id="breakfast" class="menu-section anchor-offset">
+        <h3 class="gold-text">Breakfast</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="name">
+              <span class="gold-text">English Breakfast</span>
+              <small>Choice of fried, scrambled, or hard egg, sausages, baked beans, bacon, grilled tomatoes, mushrooms, with French fries or toasted bread.</small>
+            </div>
+            <span class="price">₦8,000</span>
+          </li>
+          <li class="menu-item">
+            <div class="name">
+              <span class="gold-text">American Breakfast</span>
+              <small>Pancakes topped with maple syrup, scrambled or fried eggs, sausages, and rashers of bacon.</small>
+            </div>
+            <span class="price">₦8,000</span>
+          </li>
+          <li class="menu-item">
+            <div class="name">
+              <span class="gold-text">Nigerian Styled Breakfast</span>
+              <small>Option 1: Corned beef–infused egg sauce. Option 2: Egg sauce in tomato base. Served with choice of boiled/fried yam, potatoes, or plantain.</small>
+            </div>
+            <span class="price">₦8,000</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Finger Foods -->
+      <section id="finger-foods" class="menu-section anchor-offset">
+        <h3 class="gold-text">Finger Foods</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="name"><span class="gold-text">B.B.Q Chicken Wings</span><small>Sweet and honey-glazed wings in BBQ style.</small></div>
+            <span class="price">₦4,000</span>
+          </li>
+          <li class="menu-item">
+            <div class="name"><span class="gold-text">Chicken Drumlets</span><small>Battered, well-seasoned, and deep-fried.</small></div>
+            <span class="price">₦4,000</span>
+          </li>
+          <li class="menu-item">
+            <div class="name"><span class="gold-text">Fish Fingers</span><small>Fish fillet strips, battered and deep-fried.</small></div>
+            <span class="price">₦4,000</span>
+          </li>
+          <li class="menu-item">
+            <div class="name"><span class="gold-text">Butterfly Prawn</span><small>Sweet seasoned prawn, butterfly-cut.</small></div>
+            <span class="price">₦6,000</span>
+          </li>
+          <li class="menu-item">
+            <div class="name"><span class="gold-text">Spring Roll</span><small>Served with hot chilli sauce.</small></div>
+            <span class="price">₦4,000</span>
+          </li>
+          <li class="menu-item">
+            <div class="name"><span class="gold-text">Samosa</span><small>Served with hot chilli sauce.</small></div>
+            <span class="price">₦4,000</span>
+          </li>
+          <li class="menu-item">
+            <div class="name"><span class="gold-text">Spicy Chicken Kebab</span><small>Fresh spicy chicken cubes with ginger, garlic, and vegetables.</small></div>
+            <span class="price">₦4,000</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Continental -->
+      <section id="continental" class="menu-section anchor-offset">
+        <h3 class="gold-text">Continental</h3>
+
+        <h4 class="menu-subtitle gold-text">Beef</h4>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Shredded Beef Sauce</span><span class="price">₦6,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Beef Stroganoff</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Jamaican Beef Stir Fry</span><span class="price">₦6,000</span></li>
+        </ul>
+
+        <h4 class="menu-subtitle gold-text">Pork</h4>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Pork Chops</span><span class="price">₦9,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Pork Stir Fry</span><span class="price">₦9,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Sweet and Sour Pork</span><span class="price">₦9,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Spare Ribs</span><span class="price">₦10,000</span></li>
+        </ul>
+
+        <h4 class="menu-subtitle gold-text">Chicken</h4>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Chicken Curry Sauce</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Sweet and Sour Chicken</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Chicken & Vegetable Stir Fry</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Peppered Chicken</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Chicken and Chips</span><span class="price">₦8,000</span></li>
+        </ul>
+      </section>
+
+      <!-- Stew -->
+      <section id="stew" class="menu-section anchor-offset">
+        <h3 class="gold-text">Stew</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Prawn Stew</span><span class="price">₦11,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Snail Stew</span><span class="price">₦9,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Assorted Stew</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Fresh Fish Stew</span><span class="price">₦9,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Chicken Stew</span><span class="price">₦5,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Turkey Stew</span><span class="price">₦6,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Cow Tail Stew</span><span class="price">₦5,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Goat Meat Stew</span><span class="price">₦5,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Cow Head Stew</span><span class="price">₦5,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Catfish Stew</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Tilapia Stew</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Croaker Stew</span><span class="price">₦5,500</span></li>
+        </ul>
+      </section>
+
+      <!-- Sides (merged Sides + Sides 0.2) -->
+      <section id="sides" class="menu-section anchor-offset">
+        <h3 class="gold-text">Sides</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Jollof Rice</span><span class="price">₦3,500</span></li>
+          <li class="menu-item"><span class="name gold-text">White Rice</span><span class="price">₦2,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Braised Rice</span><span class="price">₦3,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Vegetable Fried Rice</span><span class="price">₦3,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Coconut Rice</span><span class="price">₦3,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Beef Rice</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Native Rice</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Sautéed Potatoes</span><span class="price">₦3,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Chips (Yam)</span><span class="price">₦3,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Chips (Potatoes)</span><span class="price">₦3,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Fried Plantain</span><span class="price">₦3,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Mashed Potatoes</span><span class="price">₦5,000</span></li>
+        </ul>
+      </section>
+
+      <!-- Basmati Rice -->
+      <section id="basmati" class="menu-section anchor-offset">
+        <h3 class="gold-text">Basmati Rice</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Mix-meat Fried Rice</span><span class="price">₦6,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Beef Rice</span><span class="price">₦6,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Special Fried Rice</span><span class="price">₦8,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Gabby’s Special Rice</span><span class="price">₦10,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Pineapple Fried Rice</span><span class="price">₦6,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Spanish Fried Rice</span><span class="price">₦6,000</span></li>
+          <li class="menu-item"><span class="name gold-text">White Basmati Rice</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">White Spaghetti</span><span class="price">₦3,000</span></li>
+        </ul>
+      </section>
+
+      <!-- Extras -->
+      <section id="extras" class="menu-section anchor-offset">
+        <h3 class="gold-text">Extras</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Fried Plantain</span><span class="price">₦2,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Sautéed Potatoes</span><span class="price">₦3,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Potato Chips</span><span class="price">₦3,000</span></li>
+        </ul>
+      </section>
+
+      <!-- Stew/Sauce -->
+      <section id="stew-sauce" class="menu-section anchor-offset">
+        <h3 class="gold-text">Stew / Sauce</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">White Rice & Stew</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">White Basmati Rice & Stew</span><span class="price">₦6,000</span></li>
+          <li class="menu-item"><span class="name gold-text">White Spaghetti & Stew</span><span class="price">₦4,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Yam & Egg Sauce</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Plantain & Egg Sauce</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Rice/Yam/Plantain with Corned Beef Egg Sauce</span><span class="price">—</span></li>
+        </ul>
+      </section>
+
+      <!-- Proteins -->
+      <section id="proteins" class="menu-section anchor-offset">
+        <h3 class="gold-text">Proteins</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Chicken</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Turkey</span><span class="price">₦6,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Chicken Wings</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Turkey Gizzard</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Goat Meat</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Cow Tail</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Tilapia</span><span class="price">₦4,800</span></li>
+          <li class="menu-item"><span class="name gold-text">Assorted</span><span class="price">₦3,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Cow Leg</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Croaker Fish</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Catfish</span><span class="price">₦4,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Snail</span><span class="price">₦9,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Prawn</span><span class="price">₦11,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Red Snapper Fish</span><span class="price">₦9,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Shine Nose Fish</span><span class="price">₦9,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Bush Meat</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Pork Meat</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Dry Fish</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Beef</span><span class="price">₦4,000</span></li>
+        </ul>
+      </section>
+
+      <!-- National -->
+      <section id="national" class="menu-section anchor-offset">
+        <h3 class="gold-text">National</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Porridge Yam</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Porridge Potatoes</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Mix Porridge</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Porridge Plantain</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">White Rice with Palm Oil Sauce</span><span class="price">₦6,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Native Rice with Dried Fish Sauce</span><span class="price">₦11,000</span></li>
+          <li class="menu-item"><span class="name gold-text">White Rice with Vegetable Sauce</span><span class="price">₦6,000</span></li>
+        </ul>
+      </section>
+
+      <!-- Soups -->
+      <section id="soups" class="menu-section anchor-offset">
+        <h3 class="gold-text">Soups</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Egusi Soup</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Ogbono Soup</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Vegetable Soup</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Ukazi (Afang) Soup</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Okra Soup</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Oha Soup</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Rivers Fisherman Soup</span><span class="price">₦15,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Efik Fisherman Soup</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Seafood Okra</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Native Soup</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">White Soup</span><span class="price">₦6,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Banga Soup</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Bitter Leaf Soup</span><span class="price">₦4,000</span></li>
+        </ul>
+      </section>
+
+      <!-- Swallow -->
+      <section id="swallow" class="menu-section anchor-offset">
+        <h3 class="gold-text">Swallow</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Garri</span><span class="price">₦1,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Semo</span><span class="price">₦1,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Wheat</span><span class="price">₦1,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Oatmeal</span><span class="price">₦1,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Poundo</span><span class="price">₦1,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Plantain Swallow</span><span class="price">₦1,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Fufu</span><span class="price">₦1,000</span></li>
+        </ul>
+      </section>
+
+      <!-- Native Specials -->
+      <section id="native-specials" class="menu-section anchor-offset">
+        <h3 class="gold-text">Native Specials</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Matching ground / Piompiom</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Isiewu</span><span class="price">₦9,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Nkwobi</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Nkwobi and Piompiom</span><span class="price">₦6,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Grilled Fish (Tilapia full) & Pressed Plantain</span><span class="price">₦13,000</span></li>
+        </ul>
+      </section>
+
+      <!-- BBQ & Grills -->
+      <section id="bbq-grills" class="menu-section anchor-offset">
+        <h3 class="gold-text">B.B.Q. & Grills</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">BBQ Catfish</span><span class="price">₦13,000</span></li>
+          <li class="menu-item"><span class="name gold-text">BBQ Croaker Fish</span><span class="price">₦13,000</span></li>
+          <li class="menu-item"><span class="name gold-text">BBQ Tilapia (Medium)</span><span class="price">₦10,000</span></li>
+          <li class="menu-item"><span class="name gold-text">BBQ Red Snapper</span><span class="price">Pre‑order</span></li>
+          <li class="menu-item"><span class="name gold-text">BBQ Full Chicken</span><span class="price">Pre‑order</span></li>
+          <li class="menu-item"><span class="name gold-text">BBQ Full Grasscutter</span><span class="price">Pre‑order</span></li>
+          <li class="menu-item"><span class="name gold-text">BBQ Tilapia (Big)</span><span class="price">₦13,000</span></li>
+        </ul>
+      </section>
+
+      <!-- Salads -->
+      <section id="salads" class="menu-section anchor-offset">
+        <h3 class="gold-text">Salads</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Coleslaw</span><span class="price">₦2,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Fruit Salad</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Chicken Salad</span><span class="price">₦6,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Avocado & Prawn Salad</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Prawn Cocktail Salad</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Caesar Salad</span><span class="price">₦6,000</span></li>
+        </ul>
+      </section>
+
+      <!-- Pepper Soups -->
+      <section id="pepper-soups" class="menu-section anchor-offset">
+        <h3 class="gold-text">Pepper Soups</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Full Catfish Pepper Soup</span><span class="price">₦12,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Goat Meat Pepper Soup</span><span class="price">₦5,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Chicken Pepper Soup</span><span class="price">₦5,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Cow Tail Pepper Soup</span><span class="price">₦5,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Tilapia Pepper Soup</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Full Tilapia Pepper Soup</span><span class="price">₦11,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Croaker Pepper Soup</span><span class="price">₦5,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Full Croaker Pepper Soup</span><span class="price">₦13,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Catfish Pepper Soup</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Red Snapper Pepper Soup</span><span class="price">₦10,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Snail Pepper Soup</span><span class="price">₦9,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Cow Head Pepper Soup</span><span class="price">₦5,500</span></li>
+        </ul>
+      </section>
+
+      <!-- Prawn -->
+      <section id="prawn" class="menu-section anchor-offset">
+        <h3 class="gold-text">Prawn</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Grilled Jumbo Prawn</span><span class="price">₦11,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Garlic & Herb Seared Prawn</span><span class="price">—</span></li>
+          <li class="menu-item"><span class="name gold-text">Curried Prawn in Coconut Milk</span><span class="price">₦13,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Prawn in Tomato Garlic Sauce</span><span class="price">₦13,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Prawn in Sweet & Sour Sauce</span><span class="price">₦13,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Maxseafood in Cream Sauce</span><span class="price">₦13,000</span></li>
+        </ul>
+      </section>
+
+      <!-- Fish -->
+      <section id="fish" class="menu-section anchor-offset">
+        <h3 class="gold-text">Fish</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Fish Fillet in Lemon Sauce</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Grilled Fish Curry</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Fish & Vegetable Stir Fry</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Peppered Fresh Fish (Red Snapper/Shine-nose)</span><span class="price">₦10,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Peppered Croaker Fish</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Peppered Tilapia Fish</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Peppered Catfish</span><span class="price">₦5,000</span></li>
+        </ul>
+      </section>
+
+      <!-- Pasta -->
+      <section id="pasta" class="menu-section anchor-offset">
+        <h3 class="gold-text">Pasta</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Seafood Pasta</span><span class="price">₦13,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Alfredo Pasta</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Spaghetti Bolognese</span><span class="price">₦6,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Spaghetti & Meatballs</span><span class="price">₦7,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Singapore Noodles</span><span class="price">₦8,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Seafood Creamy Pasta</span><span class="price">₦13,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Noodles & Egg</span><span class="price">₦4,000</span></li>
+        </ul>
+      </section>
+
+      <!-- Creamy Bites -->
+      <section id="creamy-bites" class="menu-section anchor-offset">
+        <h3 class="gold-text">Creamy Bites</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><span class="name gold-text">Chicken Shawarma</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Beef Shawarma</span><span class="price">₦4,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Grilled Pork Shawarma</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Asun (Goat) Shawarma</span><span class="price">₦5,000</span></li>
+          <li class="menu-item"><span class="name gold-text">Bush Meat Shawarma</span><span class="price">₦5,500</span></li>
+          <li class="menu-item"><span class="name gold-text">Mix Shawarma</span><span class="price">₦6,500</span></li>
+        </ul>
+      </section>
+
+      <!-- Pot Dish -->
+      <section id="pot-dish" class="menu-section anchor-offset">
+        <h3 class="gold-text">Pot Dish</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <span class="name gold-text">China Pot with Rice</span>
+            <span class="price">₦15,000</span>
+          </li>
+          <li class="menu-item">
+            <span class="name gold-text">China Pot with Pasta</span>
+            <span class="price">₦15,000</span>
+          </li>
+          <li class="menu-item">
+            <span class="name gold-text">Full Catfish Pepper Soup</span>
+            <span class="price">₦15,000</span>
+          </li>
+          <li class="menu-item">
+            <span class="name gold-text">Red Snapper Head</span>
+            <span class="price">₦12,000</span>
+          </li>
+          <li class="menu-item">
+            <span class="name gold-text">Full Tilapia Fish Pepper Soup</span>
+            <span class="price">₦14,000</span>
+          </li>
+        </ul>
+      </section>
+
+      <div class="tray-note gold-text" style="text-align:center; margin:1rem 0 5rem;">Takeout ₦1,000</div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav" aria-label="Primary">
+      <a href="./index.html" class="gold-text">Home</a>
+      <a href="./food.html" class="active gold-text">Food</a>
+      <a href="./drinks.html" class="gold-text">Drinks</a>
+      <a href="./rooms.html" class="gold-text">Rooms</a>
+      <a href="./contact.html" class="gold-text">Contact</a>
+    </nav>
+  </body>
+</html>
