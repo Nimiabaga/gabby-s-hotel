@@ -9,46 +9,30 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
   <style>
+    /* Override tray note spacing for this page */
     .food-grid .tray-note{
       grid-column: 1 / -1;
       justify-self: center;
+      margin-bottom: 0.6rem !important; /* keep it close to back button */
     }
 
-    /* Back button – pill & color only (per your sample) */
-    .back-btn{
-      display:inline-block;
-      margin: 2rem auto 5rem;      /* clears fixed bottom nav */
-      padding:.78rem 1.55rem;
-      border-radius:999px;
-      font-weight:800;
-      font-size:.98rem;
-      text-decoration:none;
-
-      /* sample look: dark -> amber gradient, subtle gold ring */
-      background: linear-gradient(180deg, #131008 0%, #a66600 100%);
-      border:1px solid rgba(243,231,160,.35);
-      color:#f3e7a0;               /* warm gold text */
-      text-shadow:0 1px 0 rgba(0,0,0,.55);
-
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.18),
-        0 8px 16px rgba(0,0,0,.35);
-      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
-      position:relative;
-      z-index:5;
+    /* Back button pill style */
+    .back-btn {
+      display: inline-block;
+      margin: 0.3rem auto 1.2rem; /* sits tight under tray note */
+      padding: .6rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: .95rem;
+      background: linear-gradient(180deg, #080101, #9b5e04);
+      color: #f3e7a0; /* gold text */
+      box-shadow: 0 4px 10px rgba(0,0,0,.25);
+      transition: transform .2s ease, box-shadow .2s ease;
     }
-    .back-btn:hover{
-      transform:translateY(-2px);
-      filter:brightness(1.03);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.2),
-        0 12px 22px rgba(0,0,0,.45);
-    }
-    .back-btn:active{
-      transform:translateY(0);
-      box-shadow:
-        inset 0 -2px 0 rgba(208,176,54,.25),
-        0 6px 12px rgba(0,0,0,.35);
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,.35);
     }
   </style>
 </head>
@@ -67,8 +51,6 @@
 
   <main role="main">
     <div class="food-grid">
-      <!-- Use Maximus image names where available; prices are Gabby's -->
-
       <!-- Macallan Double Cask (12yrs) -->
       <article class="food-card">
         <img src="images/macallan-12yrs.jpg" alt="Macallan Double Cask (12yrs)" />
@@ -217,11 +199,11 @@
       <div class="tray-note">
         Alcohol is served to guests 18+ only—drink responsibly.
       </div>
-    </div>
 
-    <!-- Back button -->
-    <div style="text-align:center;">
-      <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+      <!-- Back button immediately below tray note -->
+      <div style="text-align:center; grid-column: 1 / -1;">
+        <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+      </div>
     </div>
   </main>
 
