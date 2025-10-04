@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wines — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    .food-grid .tray-note{
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+    /* Back button */
+    .back-btn {
+      display: inline-block;
+      margin: 1.5rem auto 3.5rem;
+      padding: .75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: .95rem;
+      background: radial-gradient(120% 140% at 50% 0%, #2b1f08 0%, #a86b0a 65%, #7a4f09 100%);
+      color: #f3e7a0;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
+      border:1px solid rgba(243,231,160,.28);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+    .back-btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+    .back-btn:active { transform: scale(.985); }
+  </style>
+</head>
+<body class="drinks">
+  <!-- hero -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">WINE</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <main role="main">
+    <div class="food-grid">
+
+      <!-- Four Cousins -->
+      <article class="food-card">
+        <img src="images/four-cousins.jpg" alt="Four Cousins" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Four Cousins</h4>
+          <p class="food-price gold-text">₦15,000</p>
+        </div>
+      </article>
+
+      <!-- Carlo Rossi -->
+      <article class="food-card">
+        <img src="images/carlo-rossi.jpg" alt="Carlo Rossi" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Carlo Rossi</h4>
+          <p class="food-price gold-text">₦16,000</p>
+        </div>
+      </article>
+
+      <!-- Martinelis -->
+      <article class="food-card">
+        <img src="images/martinelis.jpg" alt="Martinelis" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Martinelis</h4>
+          <p class="food-price gold-text">₦19,000</p>
+        </div>
+      </article>
+
+      <!-- 4th Street -->
+      <article class="food-card">
+        <img src="images/4th-street.jpg" alt="4th Street" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">4th Street</h4>
+          <p class="food-price gold-text">₦8,000</p>
+        </div>
+      </article>
+
+      <!-- Sweet Kiss -->
+      <article class="food-card">
+        <img src="images/sweet-kiss.jpg" alt="Sweet Kiss" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Sweet Kiss</h4>
+          <p class="food-price gold-text">₦15,000</p>
+        </div>
+      </article>
+
+      <!-- Toma -->
+      <article class="food-card">
+        <img src="images/toma.jpg" alt="Toma Wine" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Toma</h4>
+          <p class="food-price gold-text">₦10,000</p>
+        </div>
+      </article>
+
+      <!-- Belaire Rose -->
+      <article class="food-card">
+        <img src="images/belaire-rose.jpg" alt="Belaire Rose" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Belaire Rose</h4>
+          <p class="food-price gold-text">₦11,000</p>
+        </div>
+      </article>
+
+      <!-- Silk & Spice -->
+      <article class="food-card">
+        <img src="images/silk-spice.jpg" alt="Silk & Spice" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Silk & Spice</h4>
+          <p class="food-price gold-text">₦34,000</p>
+        </div>
+      </article>
+
+      <!-- Thomas Barton -->
+      <article class="food-card">
+        <img src="images/thomas-barton.jpg" alt="Thomas Barton" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Thomas Barton</h4>
+          <p class="food-price gold-text">₦50,000</p>
+        </div>
+      </article>
+
+      <!-- Agor -->
+      <article class="food-card">
+        <img src="images/agor.jpg" alt="Agor Wine" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Agor</h4>
+          <p class="food-price gold-text">₦18,000</p>
+        </div>
+      </article>
+
+      <!-- Chamdor Fruit Wine -->
+      <article class="food-card">
+        <img src="images/chamdor.jpg" alt="Chamdor Fruit Wine" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Chamdor Fruit Wine</h4>
+          <p class="food-price gold-text">₦9,500</p>
+        </div>
+      </article>
+
+      <!-- Tray note -->
+      <div class="tray-note">
+        Alcohol is served to guests 18+ only—drink responsibly.
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <div style="text-align:center;">
+      <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+    </div>
+  </main>
+
+  <!-- bottom nav -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>

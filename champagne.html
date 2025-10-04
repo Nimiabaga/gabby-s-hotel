@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Champagne & Vodka — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    .food-grid .tray-note{
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+    /* Back button */
+    .back-btn {
+      display:inline-block;
+      margin:1.5rem auto 3.5rem;
+      padding:.75rem 1.5rem;
+      border-radius:999px;
+      font-weight:700;
+      text-decoration:none;
+      font-size:.95rem;
+      background: radial-gradient(120% 140% at 50% 0%, #2b1f08 0%, #a86b0a 65%, #7a4f09 100%);
+      color:#f3e7a0;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
+      border:1px solid rgba(243,231,160,.28);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+    .back-btn:hover { transform:translateY(-2px); filter:brightness(1.05); }
+    .back-btn:active { transform:scale(.985); }
+
+    /* Section titles inside page */
+    .section-heading {
+      grid-column: 1 / -1;
+      font-size:1.2rem;
+      font-weight:900;
+      color:var(--gold-base);
+      text-align:left;
+      margin:2rem 0 1rem;
+    }
+  </style>
+</head>
+<body class="drinks">
+  <!-- hero -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">CHAMPAGNE & VODKA</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <main role="main">
+    <div class="food-grid">
+
+      <!-- Champagne Section -->
+      <h3 class="section-heading">🍾 Champagne</h3>
+
+      <article class="food-card">
+        <img src="images/vueve-cliquote.jpg" alt="Vueve Cliquote Brut" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Vueve Cliquote Brut</h4>
+          <p class="food-price gold-text">₦220,000</p>
+        </div>
+      </article>
+
+      <!-- Vodka Section -->
+      <h3 class="section-heading">🍸 Vodka</h3>
+
+      <article class="food-card">
+        <img src="images/absolute-vodka.jpg" alt="Absolute Vodka" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Absolute Vodka</h4>
+          <p class="food-price gold-text">₦40,000</p>
+        </div>
+      </article>
+
+      <article class="food-card">
+        <img src="images/smirnoff-big.jpg" alt="Smirnoff Vodka (Big)" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Smirnoff Vodka (Big)</h4>
+          <p class="food-price gold-text">₦15,000</p>
+        </div>
+      </article>
+
+      <!-- Tray note -->
+      <div class="tray-note">
+        Alcohol is served to guests 18+ only—drink responsibly.
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <div style="text-align:center;">
+      <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+    </div>
+  </main>
+
+  <!-- bottom nav -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>

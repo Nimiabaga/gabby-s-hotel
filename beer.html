@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beers — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    /* Wide beer banner */
+    .beer-hero{
+      max-width:1080px;
+      margin:0 auto 1.2rem;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(243,231,160,.35);
+      box-shadow:0 8px 22px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    .beer-hero img{
+      width:100%; height:auto; display:block; object-fit:cover;
+    }
+
+    /* List container styled like your reference but in Gabby's gold */
+    .price-list{
+      width:min(1080px, 100% - 32px);
+      margin:0 auto 1.2rem;
+      background: #0f0f0f;
+      border:1px solid rgba(243,231,160,.45);
+      border-radius:18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.05);
+      padding:.6rem .6rem;
+    }
+    .price-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: .85rem 1rem;
+      gap:1rem;
+      border-bottom: 2px dotted rgba(243,231,160,.20);
+    }
+    .price-row:last-child{ border-bottom:none; }
+
+    /* Item (gold), price (white) */
+    .item-name{
+      margin:0;
+      font-weight:900;
+      font-size:1.05rem;
+    }
+    .item-name.gold-text{
+      /* uses your global gradient gold */
+      letter-spacing:.01em;
+      text-shadow:0 0 12px rgba(243,231,160,.10);
+    }
+    .item-price{
+      margin:0;
+      color:#ffffff;
+      font-weight:900;
+      font-size:1.05rem;
+      letter-spacing:.01em;
+      white-space:nowrap;
+    }
+
+    /* Back button (same pill tone you liked) */
+    .back-btn {
+      display:inline-block;
+      margin:.9rem auto calc(var(--bar-h) + 1.1rem);
+      padding:.78rem 1.5rem;
+      border-radius:999px;
+      font-weight:700;
+      font-size:.96rem;
+      text-decoration:none;
+      background: radial-gradient(120% 140% at 50% 0%, #2b1f08 0%, #a86b0a 65%, #7a4f09 100%);
+      color:#f3e7a0;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.15),
+        0 6px 16px rgba(0,0,0,.45);
+      border:1px solid rgba(243,231,160,.28);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+    .back-btn:hover{ transform:translateY(-2px); filter:brightness(1.03); }
+    .back-btn:active{ transform:scale(.985); }
+  </style>
+</head>
+<body class="drinks">
+  <!-- hero -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">BEERS</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <!-- Wide beer image -->
+  <div class="beer-hero">
+    <img src="images/beer.jpg" alt="Beer" />
+  </div>
+
+  <!-- Clean price list -->
+  <section class="price-list" aria-label="Beer list">
+    <div class="price-row">
+      <h4 class="item-name gold-text">Heineken (Big)</h4>
+      <p class="item-price">₦2,000</p>
+    </div>
+    <div class="price-row">
+      <h4 class="item-name gold-text">Heineken (Small)</h4>
+      <p class="item-price">₦1,500</p>
+    </div>
+    <div class="price-row">
+      <h4 class="item-name gold-text">Budweiser</h4>
+      <p class="item-price">₦2,000</p>
+    </div>
+    <div class="price-row">
+      <h4 class="item-name gold-text">Smirnoff Double Black</h4>
+      <p class="item-price">₦2,500</p>
+    </div>
+    <div class="price-row">
+      <h4 class="item-name gold-text">Star Radler</h4>
+      <p class="item-price">₦1,500</p>
+    </div>
+    <div class="price-row">
+      <h4 class="item-name gold-text">Desprado</h4>
+      <p class="item-price">₦2,000</p>
+    </div>
+    <div class="price-row">
+      <h4 class="item-name gold-text">Hero</h4>
+      <p class="item-price">₦2,000</p>
+    </div>
+    <div class="price-row">
+      <h4 class="item-name gold-text">Life</h4>
+      <p class="item-price">₦2,000</p>
+    </div>
+    <div class="price-row">
+      <h4 class="item-name gold-text">Medium Stout</h4>
+      <p class="item-price">₦2,000</p>
+    </div>
+    <div class="price-row">
+      <h4 class="item-name gold-text">Big Stout</h4>
+      <p class="item-price">₦2,500</p>
+    </div>
+    <div class="price-row">
+      <h4 class="item-name gold-text">Tiger</h4>
+      <p class="item-price">₦2,500</p>
+    </div>
+  </section>
+
+  <!-- Tray note -->
+  <div class="tray-note">
+    Alcohol is served to guests 18+ only—drink responsibly.
+  </div>
+
+  <!-- Back button -->
+  <div style="text-align:center;">
+    <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+  </div>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>

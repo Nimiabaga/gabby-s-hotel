@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soft/Mixers — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    /* 3-column category board */
+    .mixers-grid{
+      width:min(1080px, 100% - 32px);
+      margin:0 auto 1rem;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+    }
+    @media (max-width: 900px){ .mixers-grid{ grid-template-columns: repeat(2,1fr);} }
+    @media (max-width: 640px){ .mixers-grid{ grid-template-columns: 1fr; } }
+
+    .mixers-col{
+      background:#0f0f0f;
+      border:1px solid rgba(243,231,160,.45);
+      border-radius:18px;
+      overflow:hidden;                    /* <- lets the image “lap” the card */
+      box-shadow: 0 8px 22px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.05);
+      display:flex; flex-direction:column;
+    }
+
+    /* Edge-to-edge top image like the whiskey cards */
+    .mixers-hero{
+      width:100%;
+      height:200px;                       /* a bit taller so the drink shows fully */
+      object-fit:cover;
+      display:block;
+      border-bottom:1px solid #1d1d1d;
+    }
+
+    .mixers-heading{
+      margin:.6rem 1rem .2rem;
+      font-weight:900; letter-spacing:.04em;
+      text-align:left;
+    }
+
+    .price-list--inner{ padding:.2rem .5rem .6rem; }
+    .price-row{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:.75rem .7rem;
+      border-bottom:2px dotted rgba(243,231,160,.20);
+      gap:1rem;
+    }
+    .price-row:last-child{ border-bottom:none; }
+
+    .item-name{ margin:0; font-weight:900; font-size:1rem; }
+    .item-price{ margin:0; color:#fff; font-weight:900; font-size:1rem; white-space:nowrap; }
+
+    /* Back button (same tone you approved) */
+    .back-btn {
+      display:inline-block;
+      margin:.9rem auto calc(var(--bar-h) + 1.1rem);
+      padding:.78rem 1.5rem;
+      border-radius:999px;
+      font-weight:700; font-size:.96rem; text-decoration:none;
+      background: radial-gradient(120% 140% at 50% 0%, #2b1f08 0%, #a86b0a 65%, #7a4f09 100%);
+      color:#f3e7a0;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
+      border:1px solid rgba(243,231,160,.28);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+    .back-btn:hover{ transform:translateY(-2px); filter:brightness(1.03); }
+    .back-btn:active{ transform:scale(.985); }
+  </style>
+</head>
+<body class="drinks">
+  <!-- hero -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">SOFT / MIXERS</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <!-- 3 columns -->
+  <section class="mixers-grid" aria-label="Soft drinks, juice and energy drinks">
+
+    <!-- Soft Drinks -->
+    <div class="mixers-col">
+      <img class="mixers-hero" src="images/soft-drinks.jpg" alt="Assorted soft drinks" />
+      <h3 class="mixers-heading gold-text">🥤 Soft Drinks</h3>
+      <div class="price-list--inner">
+        <div class="price-row"><h4 class="item-name gold-text">Water</h4><p class="item-price">₦500</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Pepsi</h4><p class="item-price">₦1,000</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Coke</h4><p class="item-price">₦1,000</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Fanta</h4><p class="item-price">₦1,000</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Fayrous</h4><p class="item-price">₦1,500</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Sprite</h4><p class="item-price">₦1,000</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Maltina</h4><p class="item-price">₦1,500</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Schweppes</h4><p class="item-price">₦1,500</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Tonic Water</h4><p class="item-price">₦1,000</p></div>
+      </div>
+    </div>
+
+    <!-- Juice -->
+    <div class="mixers-col">
+      <img class="mixers-hero" src="images/juice.jpg" alt="Assorted fruit juices" />
+      <h3 class="mixers-heading gold-text">🍹 Juice</h3>
+      <div class="price-list--inner">
+        <div class="price-row"><h4 class="item-name gold-text">Hollandia</h4><p class="item-price">₦3,500</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Exotic</h4><p class="item-price">₦3,500</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Chivita</h4><p class="item-price">₦3,500</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Tomi Cranberry</h4><p class="item-price">₦3,500</p></div>
+      </div>
+
+      <!-- Fresh Juice -->
+      <h3 class="mixers-heading gold-text">🧃 Fresh Juice <span style="font-size:.9rem; font-weight:400;">(All ₦4,000)</span></h3>
+      <div class="price-list--inner">
+        <div class="price-row"><h4 class="item-name gold-text">Pineapple</h4><p class="item-price">₦4,000</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Watermelon</h4><p class="item-price">₦4,000</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Orange</h4><p class="item-price">₦4,000</p></div>
+      </div>
+    </div>
+
+    <!-- Energy Drinks -->
+    <div class="mixers-col">
+      <img class="mixers-hero" src="images/energy-drinks.jpg" alt="Energy drinks" />
+      <h3 class="mixers-heading gold-text">⚡ Energy Drinks</h3>
+      <div class="price-list--inner">
+        <div class="price-row"><h4 class="item-name gold-text">Red Bull</h4><p class="item-price">₦3,000</p></div>
+        <div class="price-row"><h4 class="item-name gold-text">Black Bullet</h4><p class="item-price">₦2,500</p></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Tray note -->
+  <div class="tray-note">
+    Alcohol is served to guests 18+ only—drink responsibly.
+  </div>
+
+  <!-- Back button -->
+  <div style="text-align:center;">
+    <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+  </div>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bitters/Liquor — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    /* Keep tray note tight so the back button sits right below it */
+    .food-grid .tray-note{
+      grid-column: 1 / -1;
+      justify-self: center;
+      margin-bottom: 0.6rem !important;
+    }
+
+    /* Back button pill (same swag as whiskey) */
+    .back-btn {
+      display: inline-block;
+      margin: 0.3rem auto 1.2rem;
+      padding: .6rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: .95rem;
+      background: linear-gradient(180deg, #080101, #9b5e04);
+      color: #f3e7a0;
+      box-shadow: 0 4px 10px rgba(0,0,0,.25);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,.35);
+    }
+  </style>
+</head>
+<body class="drinks">
+  <!-- hero matches home -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">BITTERS / LIQUOR</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <main role="main">
+    <div class="food-grid">
+      <!-- Baileys (Big) — Liquor -->
+      <article class="food-card">
+        <!-- use the image name you already have; adjust if needed -->
+        <img src="images/baileys.jpg" alt="Baileys (Big)" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Baileys (Big)</h4>
+          <p class="food-price gold-text">₦48,000</p>
+        </div>
+      </article>
+
+      <!-- Campari (Big) — Bitters -->
+      <article class="food-card">
+        <img src="images/campari-big.jpg" alt="Campari (Big)" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Campari (Big)</h4>
+          <p class="food-price gold-text">₦48,000</p>
+        </div>
+      </article>
+
+      <!-- Campari (Small) — Bitters -->
+      <article class="food-card">
+        <img src="images/campari-small.jpg" alt="Campari (Small)" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Campari (Small)</h4>
+          <p class="food-price gold-text">₦16,000</p>
+        </div>
+      </article>
+
+      <!-- Tray note -->
+      <div class="tray-note">
+        Alcohol is served to guests 18+ only—drink responsibly.
+      </div>
+
+      <!-- Back button immediately below tray note -->
+      <div style="text-align:center; grid-column: 1 / -1;">
+        <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+      </div>
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>
