@@ -9,36 +9,37 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
   <style>
+    /* Keep tray note tight so the back button sits right below it */
     .food-grid .tray-note{
       grid-column: 1 / -1;
       justify-self: center;
+      margin-bottom: .6rem !important;
     }
-    /* Back button */
-    .back-btn {
+
+    /* Back button pill (same vibe as other pages) */
+    .back-btn{
       display:inline-block;
-      margin:1.5rem auto 3.5rem;
-      padding:.75rem 1.5rem;
+      margin:.3rem auto 1.2rem;        /* sits just under tray note */
+      padding:.6rem 1.2rem;
       border-radius:999px;
       font-weight:700;
       text-decoration:none;
       font-size:.95rem;
-      background: radial-gradient(120% 140% at 50% 0%, #2b1f08 0%, #a86b0a 65%, #7a4f09 100%);
+      background: linear-gradient(180deg, #080101, #9b5e04);
       color:#f3e7a0;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
-      border:1px solid rgba(243,231,160,.28);
-      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      box-shadow:0 4px 10px rgba(0,0,0,.25);
+      transition: transform .2s ease, box-shadow .2s ease;
     }
-    .back-btn:hover { transform:translateY(-2px); filter:brightness(1.05); }
-    .back-btn:active { transform:scale(.985); }
+    .back-btn:hover{ transform:translateY(-2px); box-shadow:0 8px 16px rgba(0,0,0,.35); }
 
-    /* Section titles inside page */
-    .section-heading {
-      grid-column: 1 / -1;
-      font-size:1.2rem;
-      font-weight:900;
-      color:var(--gold-base);
-      text-align:left;
-      margin:2rem 0 1rem;
+    /* Layout: center Champagne on larger screens */
+    @media (min-width: 900px){
+      .grid-center{
+        grid-column: 2;   /* middle column in a 3-col layout (your drinks grid becomes 3 cols <=900px) */
+      }
+      body.drinks .food-grid{
+        grid-template-columns: repeat(3, 1fr); /* force neat 3-up for this page */
+      }
     }
   </style>
 </head>
@@ -49,19 +50,16 @@
     <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
   </header>
 
-  <!-- title -->
+  <!-- page title -->
   <div class="menu-title" aria-label="Menu">
-    <h2 class="gold-text">CHAMPAGNE & VODKA</h2>
+    <h2 class="gold-text">CHAMPAGNE &amp; VODKA</h2>
     <span class="menu-underline" aria-hidden="true"></span>
   </div>
 
   <main role="main">
     <div class="food-grid">
-
-      <!-- Champagne Section -->
-      <h3 class="section-heading">🍾 Champagne</h3>
-
-      <article class="food-card">
+      <!-- Champagne (center on desktop) -->
+      <article class="food-card grid-center">
         <img src="images/vueve-cliquote.jpg" alt="Vueve Cliquote Brut" />
         <div class="food-info">
           <h4 class="food-name gold-text">Vueve Cliquote Brut</h4>
@@ -69,9 +67,7 @@
         </div>
       </article>
 
-      <!-- Vodka Section -->
-      <h3 class="section-heading">🍸 Vodka</h3>
-
+      <!-- Vodka -->
       <article class="food-card">
         <img src="images/absolute-vodka.jpg" alt="Absolute Vodka" />
         <div class="food-info">
@@ -92,11 +88,11 @@
       <div class="tray-note">
         Alcohol is served to guests 18+ only—drink responsibly.
       </div>
-    </div>
 
-    <!-- Back button -->
-    <div style="text-align:center;">
-      <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+      <!-- Back button (tight under tray note) -->
+      <div style="text-align:center; grid-column: 1 / -1;">
+        <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+      </div>
     </div>
   </main>
 

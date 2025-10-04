@@ -9,27 +9,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
   <style>
+    /* Keep tray note and button tight together */
     .food-grid .tray-note{
       grid-column: 1 / -1;
       justify-self: center;
+      margin-bottom: .35rem !important;
     }
-    /* Back button */
-    .back-btn {
-      display: inline-block;
-      margin: 1.5rem auto 3.5rem;
-      padding: .75rem 1.5rem;
-      border-radius: 999px;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: .95rem;
-      background: radial-gradient(120% 140% at 50% 0%, #2b1f08 0%, #a86b0a 65%, #7a4f09 100%);
-      color: #f3e7a0;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
-      border:1px solid rgba(243,231,160,.28);
-      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+
+    /* Back button pill (same as Whiskey) */
+    .back-btn{
+      display:inline-block;
+      margin:.25rem auto 1rem;       /* sits just under the tray note */
+      padding:.6rem 1.2rem;
+      border-radius:999px;
+      font-weight:700;
+      font-size:.95rem;
+      text-decoration:none;
+      background: linear-gradient(180deg, #080101, #9b5e04);
+      color:#f3e7a0;
+      box-shadow:0 4px 10px rgba(0,0,0,.25);
+      transition:transform .2s ease, box-shadow .2s ease;
     }
-    .back-btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
-    .back-btn:active { transform: scale(.985); }
+    .back-btn:hover{ transform:translateY(-2px); box-shadow:0 8px 16px rgba(0,0,0,.35); }
   </style>
 </head>
 <body class="drinks">
@@ -47,7 +48,6 @@
 
   <main role="main">
     <div class="food-grid">
-
       <!-- Four Cousins -->
       <article class="food-card">
         <img src="images/four-cousins.jpg" alt="Four Cousins" />
@@ -151,11 +151,11 @@
       <div class="tray-note">
         Alcohol is served to guests 18+ only—drink responsibly.
       </div>
-    </div>
 
-    <!-- Back button -->
-    <div style="text-align:center;">
-      <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+      <!-- Back button: immediately below tray note -->
+      <div style="text-align:center; grid-column:1 / -1;">
+        <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+      </div>
     </div>
   </main>
 

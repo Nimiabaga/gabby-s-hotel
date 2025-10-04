@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gin & Rum — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    /* Keep tray note close above the back button */
+    .food-grid .tray-note {
+      grid-column: 1 / -1;
+      justify-self: center;
+      margin-bottom: 0.6rem !important;
+    }
+
+    /* Back button pill (same as whiskey style) */
+    .back-btn {
+      display: inline-block;
+      margin: 0.3rem auto 1.2rem;
+      padding: .6rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: .95rem;
+      background: linear-gradient(180deg, #080101, #9b5e04);
+      color: #f3e7a0;
+      box-shadow: 0 4px 10px rgba(0,0,0,.25);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,.35);
+    }
+  </style>
+</head>
+<body class="drinks">
+  <!-- hero -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- page title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">GIN & RUM</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <main role="main">
+    <div class="food-grid">
+
+      <!-- Big Gordon Gin -->
+      <article class="food-card">
+        <img src="images/gordon-gin.jpg" alt="Big Gordon Gin" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Big Gordon Gin</h4>
+          <p class="food-price gold-text">₦12,000</p>
+        </div>
+      </article>
+
+      
+
+      <!-- Azul -->
+      <article class="food-card">
+        <img src="images/azul.jpg" alt="Azul" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Azul</h4>
+          <p class="food-price gold-text">₦590,000</p>
+        </div>
+      </article>
+
+      <!-- Barbay Saphire -->
+      <article class="food-card">
+        <img src="images/barbay-saphire.jpg" alt="Bombay Saphire" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Bombay Saphire</h4>
+          <p class="food-price gold-text">₦80,000</p>
+        </div>
+      </article>
+
+      <!-- Olmeca Tequila -->
+      <article class="food-card">
+        <img src="images/olmeca-tequila.jpg" alt="Olmeca Tequila" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Olmeca Tequila</h4>
+          <p class="food-price gold-text">₦96,000</p>
+        </div>
+      </article>
+
+      <!-- Buen Amigor Gold -->
+      <article class="food-card">
+        <img src="images/buen-amigor-gold.jpg" alt="Buen Amigor Gold" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Buen Amigor Gold</h4>
+          <p class="food-price gold-text">₦40,000</p>
+        </div>
+      </article>
+
+      <!-- Buen Amigor White -->
+      <article class="food-card">
+        <img src="images/buen-amigor-white.jpg" alt="Buen Amigor White" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Buen Amigor White</h4>
+          <p class="food-price gold-text">₦40,000</p>
+        </div>
+      </article>
+
+      <!-- Tray note -->
+      <div class="tray-note">
+        Alcohol is served to guests 18+ only—drink responsibly.
+      </div>
+
+      <!-- Back button -->
+      <div style="text-align:center; grid-column: 1 / -1;">
+        <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- bottom nav -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>

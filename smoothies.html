@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smoothies — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    .smoothie-card {
+      width:min(1080px, 100% - 32px);
+      margin:0 auto 1rem;
+      background:#0f0f0f;
+      border:1px solid rgba(243,231,160,.45);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 8px 22px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .smoothie-hero { width:100%; height:240px; object-fit:cover; display:block; }
+    .smoothie-body { padding:1.2rem 1.4rem; background:#111; }
+    .smoothie-title { margin:0 0 .3rem; font-weight:900; font-size:1.25rem; text-align:center; }
+    .smoothie-price-note { margin:0 0 1rem; text-align:center; font-size:1rem; font-weight:700; color:#f3e7a0; }
+
+    .smoothie-list{
+      list-style:disc; margin:0; padding-left:1.4rem;
+      color:#fff; font-size:1.05rem; line-height:1.55;
+    }
+    .smoothie-list li{ margin-bottom:.4rem; }
+
+    /* Tray note */
+    .tray-note{
+      width:min(1080px, 100% - 32px);
+      margin:.8rem auto .35rem;
+      text-align:center;
+      font-weight:600;
+    }
+
+    /* Back button (expo style) */
+    .back-row{ text-align:center; }
+    .back-btn{
+      display:inline-block;
+      margin:.25rem auto calc(1rem + var(--bar-h)); /* clears fixed bottom nav */
+      padding:.6rem 1.2rem;
+      border-radius:999px;
+      font-weight:700; font-size:.95rem; text-decoration:none;
+      background:linear-gradient(180deg, #080101, #9b5e04);
+      color:#f3e7a0;
+      box-shadow:0 4px 10px rgba(0,0,0,.25);
+      transition:transform .2s ease, box-shadow .2s ease;
+      position:relative; z-index:5;
+    }
+    .back-btn:hover{ transform:translateY(-2px); box-shadow:0 8px 16px rgba(0,0,0,.35); }
+  </style>
+</head>
+<body class="drinks">
+  <!-- hero -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">SMOOTHIES</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <main role="main">
+    <section class="smoothie-card">
+      <img class="smoothie-hero" src="images/smoothies.jpg" alt="Assorted Smoothies" />
+      <div class="smoothie-body">
+        <h3 class="smoothie-title gold-text">🥤 Smoothies</h3>
+        <p class="smoothie-price-note">(All ₦6,000)</p>
+        <ul class="smoothie-list">
+          <li>Avocado Banana</li>
+          <li>Ginger Mix</li>
+          <li>Special Smoothie</li>
+          <li>Banana Smoothie</li>
+          <li>Pineapple Smoothie</li>
+          <li>Apple Smoothie</li>
+          <li>Watermelon Smoothie</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Tray note -->
+    <div class="tray-note">
+      Alcohol is served to guests 18+ only—drink responsibly.
+    </div>
+
+    <!-- Back button -->
+    <div class="back-row">
+      <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+    </div>
+  </main>
+
+  <!-- bottom nav -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cognac — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    /* Keep tray note tight so the back button sits right below it */
+    .food-grid .tray-note{
+      grid-column: 1 / -1;
+      justify-self: center;
+      margin-bottom: 0.6rem !important;
+    }
+
+    /* Back button pill */
+    .back-btn {
+      display: inline-block;
+      margin: 0.3rem auto 1.2rem;
+      padding: .6rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: .95rem;
+      background: linear-gradient(180deg, #080101, #9b5e04);
+      color: #f3e7a0;
+      box-shadow: 0 4px 10px rgba(0,0,0,.25);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,.35);
+    }
+  </style>
+</head>
+<body class="drinks">
+  <!-- hero -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">COGNAC</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <main role="main">
+    <div class="food-grid">
+
+      <!-- Hennessy VS -->
+      <article class="food-card">
+        <img src="images/hennessy-vs.jpg" alt="Hennessy VS" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Hennessy VS</h4>
+          <p class="food-price gold-text">₦110,000</p>
+        </div>
+      </article>
+
+      <!-- Hennessy VSOP -->
+      <article class="food-card">
+        <img src="images/hennessy-vsop.jpg" alt="Hennessy VSOP" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Hennessy VSOP</h4>
+          <p class="food-price gold-text">₦220,000</p>
+        </div>
+      </article>
+
+      <!-- Martel Swift Blue -->
+      <article class="food-card">
+        <img src="images/martel-swift-blue.jpg" alt="Martel Swift Blue" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Martel Swift Blue</h4>
+          <p class="food-price gold-text">₦116,000</p>
+        </div>
+      </article>
+
+      <!-- Martel VS -->
+      <article class="food-card">
+        <img src="images/martel-vs.jpg" alt="Martel VS" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Martel VS</h4>
+          <p class="food-price gold-text">₦110,000</p>
+        </div>
+      </article>
+
+      <!-- Tray note -->
+      <div class="tray-note">
+        Alcohol is served to guests 18+ only—drink responsibly.
+      </div>
+
+      <!-- Back button -->
+      <div style="text-align:center; grid-column: 1 / -1;">
+        <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- bottom nav -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>
