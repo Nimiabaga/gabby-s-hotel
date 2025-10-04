@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rooms — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    /* Page tweaks to keep it airy and elegant */
+    .rooms .menu-title{ margin:.35rem auto .6rem; }
+    .rooms .food-grid{
+      max-width:1080px;
+      gap:16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media (max-width: 720px){ .rooms .food-grid{ grid-template-columns: 1fr; } }
+
+    .rooms .food-card{
+      background:#0f0f0f;
+      border:1px solid #262626;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 8px 18px rgba(0,0,0,.35);
+      display:flex; flex-direction:column;
+    }
+    .rooms .food-card img{
+      width:100%;
+      aspect-ratio: 4 / 3;
+      object-fit:cover; display:block;
+    }
+    .rooms .food-info{
+      background:#111;
+      padding:10px 12px 12px;
+      border-top:1px solid #1d1d1d;
+      line-height:1.25;
+    }
+    .rooms .food-info h4{
+      margin:0 0 2px;
+      font-size:1.02rem;
+      background:linear-gradient(180deg,var(--gold-top),var(--gold-mid) 48%,var(--gold-base));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      text-shadow:0 0 16px rgba(240,210,100,.18);
+      font-weight:900;
+    }
+    .rooms .food-info p{
+      margin:0;
+      color:#ffffff !important;
+      background:none !important;
+      font-weight:900; font-size:1.18rem;
+    }
+
+    /* Tray note + booking buttons grouped tight */
+    .rooms .tray-note{
+      grid-column:1 / -1;
+      justify-self:center;
+      width:min(1080px, 100% - 32px);
+      margin: .9rem auto .5rem;
+      padding:.7rem 1rem;
+      text-align:center; line-height:1.35;
+      background:rgba(12,12,12,.88);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.04);
+      color:#d9d9d9; font-weight:600; font-size:.95rem;
+    }
+
+    .rooms .book-row{
+      grid-column:1 / -1;
+      text-align:center;
+      margin:.15rem 0 calc(var(--bar-h) + .9rem);
+      display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap;
+    }
+    .rooms .book-btn{
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:.68rem 1.1rem; border-radius:999px;
+      text-decoration:none; font-weight:800; font-size:.95rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 6px 16px rgba(0,0,0,.45);
+      border:1px solid rgba(243,231,160,.28);
+      transition:transform .18s ease, filter .18s ease, box-shadow .18s ease;
+    }
+    .rooms .book-btn:hover{ transform:translateY(-2px); filter:brightness(1.03); }
+    .rooms .book-btn:active{ transform:scale(.985); }
+
+    /* WhatsApp (greenish gold blend), Call (signature gold blend) */
+    .rooms .btn-whatsapp{
+      background: radial-gradient(120% 140% at 50% 0%, #0b1e12 0%, #2c7a33 65%, #0f4d19 100%);
+      color:#e7f8ea;
+    }
+    .rooms .btn-call{
+      background: radial-gradient(120% 140% at 50% 0%, #2b1f08 0%, #a86b0a 65%, #7a4f09 100%);
+      color:#f3e7a0;
+    }
+
+    .rooms .btn-icon{
+      width:1.05rem; height:1.05rem; display:inline-block; line-height:0;
+      filter: drop-shadow(0 1px 0 rgba(0,0,0,.3));
+    }
+    .rooms .btn-icon svg{ display:block; width:100%; height:100%; }
+  </style>
+</head>
+<body class="rooms drinks">
+  <!-- hero -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- title -->
+  <div class="menu-title" aria-label="Rooms">
+    <h2 class="gold-text">ROOMS</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <main role="main">
+    <div class="food-grid">
+      <!-- Serenity Luxe — ₦35,000 -->
+      <article class="food-card">
+        <img src="images/serenity-luxe.jpg" alt="Serenity Luxe Room" />
+        <div class="food-info">
+          <h4>Serenity Luxe</h4>
+          <p>₦35,000</p>
+        </div>
+      </article>
+
+      <!-- Urban Classic — ₦40,000 -->
+      <article class="food-card">
+        <img src="images/urban-classic.jpg" alt="Urban Classic Room" />
+        <div class="food-info">
+          <h4>Urban Classic</h4>
+          <p>₦40,000</p>
+        </div>
+      </article>
+
+      <!-- Velvet Luxe — ₦50,000 -->
+      <article class="food-card">
+        <img src="images/velvet-luxe.jpg" alt="Velvet Luxe Room" />
+        <div class="food-info">
+          <h4>Velvet Luxe</h4>
+          <p>₦50,000</p>
+        </div>
+      </article>
+
+      <!-- Grand Luxe — ₦60,000 -->
+      <article class="food-card">
+        <img src="images/grand-luxe.jpg" alt="Grand Luxe Room" />
+        <div class="food-info">
+          <h4>Grand Luxe</h4>
+          <p>₦60,000</p>
+        </div>
+      </article>
+
+      <!-- Presidential Escape — ₦85,000 -->
+      <article class="food-card">
+        <img src="images/presidential-escape.jpg" alt="Presidential Escape Suite" />
+        <div class="food-info">
+          <h4>Presidential Escape</h4>
+          <p>₦85,000</p>
+        </div>
+      </article>
+
+      <!-- Tray note (short & clear) -->
+      <div class="tray-note">
+        Complimentary breakfast, pool & 24-hour Wi-Fi included. Check-in 2:00 PM • Check-out 12:00 Noon.
+        Full payment confirms bookings. Late check-out: after 12–6 PM = 50% rate, after 6 PM = full rate.
+        Strict no smoking/vaping policy (₦1,000,000 fine). Rates may change without notice.
+      </div>
+
+      <!-- Booking buttons -->
+      <div class="book-row">
+        <!-- WhatsApp -->
+        <a class="book-btn btn-whatsapp" href="https://wa.me/2349135009881?text=Hello%20Gabby%E2%80%99s%20Boutique%20Hotel%20—%20I%E2%80%99d%20like%20to%20book%20a%20room." target="_blank" rel="noopener">
+          <span class="btn-icon" aria-hidden="true">
+            <!-- WhatsApp icon -->
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.85 11.85 0 0 0 12.05 0C5.46.02.08 5.4.1 11.99c.01 2.11.56 4.17 1.6 6L0 24l6.18-1.62a12.02 12.02 0 0 0 5.86 1.5h.01c6.59 0 11.96-5.38 11.97-11.97A11.9 11.9 0 0 0 20.52 3.48Zm-8.37 18.08h-.01a10.05 10.05 0 0 1-5.12-1.41l-.37-.22-3.66.96.98-3.57-.24-.37a10.03 10.03 0 0 1-1.56-5.37C2.15 6.52 6.54 2.14 12.05 2.14c2.67 0 5.18 1.04 7.07 2.92a9.96 9.96 0 0 1 2.93 7.06c0 5.51-4.48 9.99-9.9 9.99Zm5.64-7.47c-.31-.16-1.84-.9-2.12-1-.28-.1-.48-.16-.68.16-.2.31-.78 1-.95 1.21-.17.21-.35.23-.66.08-.31-.16-1.31-.48-2.5-1.52-.92-.78-1.54-1.73-1.72-2.02-.18-.31-.02-.48.14-.63.14-.14.31-.35.45-.53.16-.18.2-.31.31-.52.1-.21.06-.39-.02-.55-.08-.16-.68-1.61-.94-2.2-.25-.61-.5-.52-.68-.53h-.58c-.2 0-.53.08-.81.39-.28.31-1.07 1.05-1.07 2.57s1.09 2.98 1.24 3.19c.16.21 2.14 3.26 5.2 4.57.73.31 1.29.49 1.73.63.73.23 1.39.2 1.91.12.58-.08 1.84-.75 2.1-1.48.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37Z"/></svg>
+          </span>
+          WhatsApp to Book
+        </a>
+
+        <!-- Call -->
+        <a class="book-btn btn-call" href="tel:+2349136500079">
+          <span class="btn-icon" aria-hidden="true">
+            <!-- Phone icon -->
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1.003 1.003 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V22c0 .55-.45 1-1 1C10.07 23 1 13.93 1 2c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.09.33.02.68-.24 1.02l-2.2 2.2Z"/></svg>
+          </span>
+          Call to Book
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- bottom nav -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html" class="active">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>
