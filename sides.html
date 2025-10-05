@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sides — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    /* Section card wrapper (one image + list) */
+    .section-card{
+      width:min(1080px, 100% - 32px);
+      margin:0 auto 1.1rem;
+      background:#0f0f0f;
+      border:1px solid rgba(243,231,160,.45);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 8px 22px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .section-hero{ width:100%; height:230px; object-fit:cover; display:block; border-bottom:1px solid #1a1a1a; }
+    .section-body{ padding:1rem 1.1rem 1.2rem; }
+
+    .section-title{
+      margin:.1rem 0 .45rem;
+      font-weight:900; font-size:1.25rem; text-align:center;
+    }
+    .price-list{ margin:0; padding:0; list-style:none; }
+    .row{
+      display:flex; justify-content:space-between; align-items:flex-start;
+      gap:.8rem; padding:.75rem .4rem; border-bottom:2px dotted rgba(243,231,160,.20);
+    }
+    .row:last-child{ border-bottom:none; }
+    .item{
+      margin:0; font-weight:800; letter-spacing:.01em;
+      font-size:1.02rem;
+    }
+    .price{
+      margin:0; white-space:nowrap; font-weight:900; color:#fff; font-size:1.02rem;
+    }
+    .desc{
+      display:block; margin-top:.25rem; color:#cfcfcf; line-height:1.35;
+      font-weight:500; font-size:.84rem;
+    }
+
+    /* Tray note spacing */
+    .tray-note{
+      width:min(1080px, 100% - 32px);
+      margin:.8rem auto .35rem;
+      text-align:center; font-weight:600;
+    }
+
+    /* Back button (gold gradient like others) */
+    .back-row{ text-align:center; }
+    .back-btn{
+      display:inline-block;
+      margin:.25rem auto calc(1rem + var(--bar-h));
+      padding:.6rem 1.2rem;
+      border-radius:999px;
+      font-weight:700; font-size:.95rem; text-decoration:none;
+      background:
+        linear-gradient(180deg, #fcd630 0%, #8f5d10 55%, #c6901e 100%) padding-box,
+        linear-gradient(180deg, rgba(0,0,0,0.65), rgba(208,176,54,.45) 55%, rgba(140,106,19,.45)) border-box;
+      border:1px solid transparent; color:#000;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
+      transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      position:relative; z-index:5;
+    }
+    .back-btn:hover{ transform:translateY(-2px); filter:brightness(1.03); }
+    .back-btn:active{ transform:scale(.985); }
+
+    /* Phone tweaks */
+    @media (max-width:560px){
+      .item{ font-size:.98rem; }
+      .price{ font-size:.98rem; }
+      .desc{ font-size:.78rem; }
+      .section-hero{ height:200px; }
+    }
+  </style>
+</head>
+<body class="drinks">
+  <!-- Hero -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- Title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">SIDES</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <main role="main">
+
+    <!-- ===== Plantain & Yam ===== -->
+    <section class="section-card">
+      <img class="section-hero" src="images/sides-plantain-yam.jpg" alt="Plantain and yam sides" />
+      <div class="section-body">
+        <h3 class="section-title gold-text">Plantain &amp; Yam</h3>
+        <ul class="price-list">
+          <li class="row">
+            <div>
+              <p class="item gold-text">Fried Plantain</p>
+              <span class="desc">Golden, lightly salted slices.</span>
+            </div>
+            <p class="price">₦3,000</p>
+          </li>
+          <li class="row">
+            <div>
+              <p class="item gold-text">Chips (Yam)</p>
+              <span class="desc">Crispy yam fries, served hot.</span>
+            </div>
+            <p class="price">₦3,000</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Potatoes & Fries ===== -->
+    <section class="section-card">
+      <img class="section-hero" src="images/sides-potatoes-fries.jpg" alt="Potatoes and fries sides" />
+      <div class="section-body">
+        <h3 class="section-title gold-text">Potatoes &amp; Fries</h3>
+        <ul class="price-list">
+          <li class="row">
+            <div>
+              <p class="item gold-text">Sautéed Potatoes</p>
+              <span class="desc">Pan-tossed with herbs and a touch of butter.</span>
+            </div>
+            <p class="price">₦3,000</p>
+          </li>
+          <li class="row">
+            <div>
+              <p class="item gold-text">Chips (Potatoes)</p>
+              <span class="desc">Classic crispy fries.</span>
+            </div>
+            <p class="price">₦3,000</p>
+          </li>
+          <li class="row">
+            <div>
+              <p class="item gold-text">Mashed Potatoes</p>
+              <span class="desc">Creamy mash, lightly seasoned.</span>
+            </div>
+            <p class="price">₦5,000</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Tray note -->
+    <div class="tray-note">
+      Prices are in Nigerian Naira (₦). Ask for ketchup or chili sauce.
+    </div>
+
+    <!-- Back button -->
+    <div class="back-row">
+      <a href="./food.html" class="back-btn">← Back to Food</a>
+    </div>
+  </main>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html" class="active">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>
