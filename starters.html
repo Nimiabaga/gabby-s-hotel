@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Starters — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    /* Keep tray note close to the back button */
+    .food-grid .tray-note{
+      grid-column: 1 / -1;
+      justify-self: center;
+      margin-bottom: .45rem !important;
+    }
+
+    /* Back button pill (same tone as other pages) */
+    .back-btn{
+      display:inline-block;
+      margin:.25rem auto 1.1rem;
+      padding:.6rem 1.2rem;
+      border-radius:999px;
+      font-weight:700; font-size:.95rem; text-decoration:none;
+      background: linear-gradient(180deg, #080101, #9b5e04);
+      color:#f3e7a0;
+      box-shadow:0 4px 10px rgba(0,0,0,.25);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .back-btn:hover{ transform:translateY(-2px); box-shadow:0 8px 16px rgba(0,0,0,.35); }
+
+    /* Small description text in cards */
+    .food-info small{
+      display:block; margin-top:4px; color:#cfcfcf; line-height:1.35;
+      font-size:.88rem; font-weight:600;
+    }
+  </style>
+</head>
+<body class="drinks">
+  <!-- hero -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- page title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">STARTERS</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <main role="main">
+    <div class="food-grid">
+      <!-- Sweet Corn Soup -->
+      <article class="food-card">
+        <img src="images/sweet-corn-soup.jpg" alt="Sweet Corn Soup" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Sweet Corn Soup</h4>
+          <p class="food-price gold-text">₦2,500</p>
+          <small>
+            A nutritious, creamy sweet-corn soup finished with black pepper and fresh herbs.
+          </small>
+        </div>
+      </article>
+
+      <!-- Cream of Chicken Soup -->
+      <article class="food-card">
+        <img src="images/cream-of-chicken-soup.jpg" alt="Cream of Chicken Soup" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Cream of Chicken Soup</h4>
+          <p class="food-price gold-text">₦2,500</p>
+          <small>
+            Silky chicken soup with tender pieces and gentle aromatics — warm and comforting.
+          </small>
+        </div>
+      </article>
+
+      <!-- Tray note -->
+      <div class="tray-note">
+        Prices in Nigerian Naira (₦). Please inform us of any allergies.
+      </div>
+
+      <!-- Back button -->
+      <div style="text-align:center; grid-column:1 / -1;">
+        <a href="./food.html" class="back-btn">← Back to Food</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html" class="active">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>
