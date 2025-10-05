@@ -11,47 +11,110 @@
   <style>
     .smoothie-card {
       width:min(1080px, 100% - 32px);
-      margin:0 auto 1rem;
-      background:#0f0f0f;
+      margin:0 auto 1.2rem;
+      background: radial-gradient(160% 180% at 50% -30%, #2b1f08 0%, #0f0f0f 60%);
       border:1px solid rgba(243,231,160,.45);
       border-radius:18px;
       overflow:hidden;
-      box-shadow:0 8px 22px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.05);
+      box-shadow:0 8px 22px rgba(0,0,0,.45);
+      transition:transform .25s ease, box-shadow .25s ease;
     }
-    .smoothie-hero { width:100%; height:240px; object-fit:cover; display:block; }
-    .smoothie-body { padding:1.2rem 1.4rem; background:#111; }
-    .smoothie-title { margin:0 0 .3rem; font-weight:900; font-size:1.25rem; text-align:center; }
-    .smoothie-price-note { margin:0 0 1rem; text-align:center; font-size:1rem; font-weight:700; color:#f3e7a0; }
+    .smoothie-card:hover {
+      transform:translateY(-4px);
+      box-shadow:0 10px 28px rgba(243,231,160,.18);
+    }
 
-    .smoothie-list{
-      list-style:disc; margin:0; padding-left:1.4rem;
-      color:#fff; font-size:1.05rem; line-height:1.55;
+    .smoothie-hero {
+      width:100%;
+      height:240px;
+      object-fit:cover;
+      display:block;
+      border-bottom:1px solid #1d1d1d;
     }
-    .smoothie-list li{ margin-bottom:.4rem; }
+
+    .smoothie-body {
+      padding:1.4rem 1.6rem;
+      background:#111;
+      text-align:center;
+    }
+
+    .smoothie-title {
+      margin:0 0 .3rem;
+      font-weight:900;
+      font-size:1.35rem;
+      color:#f3e7a0;
+      text-shadow:0 1px 2px rgba(0,0,0,.35);
+      letter-spacing:.03em;
+    }
+
+    .smoothie-price-note {
+      margin:0 0 1rem;
+      font-size:1.05rem;
+      font-weight:700;
+      color:#f3e7a0;
+      opacity:.9;
+    }
+
+    .smoothie-list {
+      list-style:none;
+      padding-left:0;
+      margin:0;
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap:.7rem 1rem;
+      text-align:center;
+    }
+
+    .smoothie-list li {
+      color:#fff;
+      font-weight:700;
+      font-size:1.05rem;
+      background:rgba(255,255,255,.05);
+      border-radius:8px;
+      padding:.5rem .75rem;
+      box-shadow:inset 0 0 0 1px rgba(243,231,160,.25);
+      transition:background .2s ease, transform .2s ease;
+    }
+    .smoothie-list li:hover {
+      background:rgba(243,231,160,.1);
+      transform:translateY(-2px);
+    }
 
     /* Tray note */
-    .tray-note{
+    .tray-note {
       width:min(1080px, 100% - 32px);
       margin:.8rem auto .35rem;
       text-align:center;
       font-weight:600;
+      color:#f3e7a0;
+      opacity:.85;
     }
 
-    /* Back button (expo style) */
-    .back-row{ text-align:center; }
-    .back-btn{
+    /* Back button — gold gradient (matches menu theme) */
+    .back-row { text-align:center; }
+    .back-btn {
       display:inline-block;
-      margin:.25rem auto calc(1rem + var(--bar-h)); /* clears fixed bottom nav */
-      padding:.6rem 1.2rem;
+      margin:.6rem auto calc(1rem + var(--bar-h));
+      padding:.75rem 1.5rem;
       border-radius:999px;
-      font-weight:700; font-size:.95rem; text-decoration:none;
-      background:linear-gradient(180deg, #080101, #9b5e04);
-      color:#f3e7a0;
-      box-shadow:0 4px 10px rgba(0,0,0,.25);
-      transition:transform .2s ease, box-shadow .2s ease;
-      position:relative; z-index:5;
+      font-weight:700;
+      font-size:.96rem;
+      text-decoration:none;
+      background:
+        linear-gradient(180deg, #fcd630 0%, #8f5d10 55%, #c6901e 100%) padding-box,
+        linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(208,176,54,.45) 55%, rgba(140,106,19,.45)) border-box;
+      border:1px solid transparent;
+      color:#000;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
+      transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      position:relative;
+      z-index:5;
     }
-    .back-btn:hover{ transform:translateY(-2px); box-shadow:0 8px 16px rgba(0,0,0,.35); }
+    .back-btn:hover {
+      transform:translateY(-2px);
+      filter:brightness(1.05);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 10px 20px rgba(0,0,0,.55);
+    }
   </style>
 </head>
 <body class="drinks">
@@ -71,7 +134,7 @@
     <section class="smoothie-card">
       <img class="smoothie-hero" src="images/smoothies.jpg" alt="Assorted Smoothies" />
       <div class="smoothie-body">
-        <h3 class="smoothie-title gold-text">🥤 Smoothies</h3>
+        <h3 class="smoothie-title">🥤 Smoothies</h3>
         <p class="smoothie-price-note">(All ₦6,000)</p>
         <ul class="smoothie-list">
           <li>Avocado Banana</li>
@@ -87,7 +150,7 @@
 
     <!-- Tray note -->
     <div class="tray-note">
-      Alcohol is served to guests 18+ only—drink responsibly.
+      Alcohol is served to guests 18+ only — drink responsibly.
     </div>
 
     <!-- Back button -->
@@ -96,11 +159,11 @@
     </div>
   </main>
 
- <!-- Bottom nav -->
+  <!-- Bottom nav -->
   <nav class="bottom-nav" aria-label="Primary">
     <a href="./index.html">Home</a>
     <a href="./food.html">Food</a>
-    <a href="./drinks.html">Drinks</a>
+    <a href="./drinks.html" class="active">Drinks</a>
     <a href="./rooms.html">Rooms</a>
     <a href="./contact.html">Contact</a>
   </nav>

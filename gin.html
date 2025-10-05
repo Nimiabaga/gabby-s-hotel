@@ -16,7 +16,7 @@
       margin-bottom: 0.6rem !important;
     }
 
-    /* Back button pill (same as whiskey style) */
+    /* ✅ Updated back button — same golden gradient as Beers/Cognac pages */
     .back-btn {
       display: inline-block;
       margin: 0.3rem auto 1.2rem;
@@ -25,14 +25,22 @@
       font-weight: 700;
       text-decoration: none;
       font-size: .95rem;
-      background: linear-gradient(180deg, #080101, #9b5e04);
-      color: #f3e7a0;
-      box-shadow: 0 4px 10px rgba(0,0,0,.25);
-      transition: transform .2s ease, box-shadow .2s ease;
+      background:
+        linear-gradient(180deg, #fcd630 0%, #8f5d10 55%, #c6901e 100%) padding-box,
+        linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(208,176,54,.45) 55%, rgba(140,106,19,.45)) border-box;
+      border: 1px solid transparent;
+      color: #000000;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
     }
     .back-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(0,0,0,.35);
+      filter: brightness(1.05);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 10px 20px rgba(0,0,0,.55);
+    }
+    .back-btn:active {
+      transform: scale(.985);
+      box-shadow: inset 0 -2px 0 rgba(208,176,54,.45), 0 6px 12px rgba(0,0,0,.45);
     }
   </style>
 </head>
@@ -79,7 +87,7 @@
         </div>
       </article>
 
-      <!-- Barbay Saphire -->
+      <!-- Bombay Saphire -->
       <article class="food-card">
         <img src="images/barbay-saphire.jpg" alt="Bombay Saphire" />
         <div class="food-info">
@@ -131,7 +139,7 @@
   <nav class="bottom-nav" aria-label="Primary">
     <a href="./index.html">Home</a>
     <a href="./food.html">Food</a>
-    <a href="./drinks.html">Drinks</a>
+    <a href="./drinks.html" class="active">Drinks</a>
     <a href="./rooms.html">Rooms</a>
     <a href="./contact.html">Contact</a>
   </nav>

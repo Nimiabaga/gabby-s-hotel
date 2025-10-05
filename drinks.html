@@ -9,86 +9,79 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-  <!-- Page-only tweaks to get the Maximus feel -->
   <style>
-    /* Improved pill-style category buttons — uses design tokens from style.css */
+    /* ===== Drinks pills — layout + COLORS MATCH FOOD ===== */
     .menu-toggle{
-      display:flex;
-      justify-content:center;
-      gap:.6rem;
-      flex-wrap:wrap;
-      margin:1rem auto 1.2rem;
-      max-width:980px;
-      padding:0 .6rem;
+      display:grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+      gap:12px 14px !important;
+      justify-items:center !important;
+      margin:1rem auto 1.2rem !important;
+      max-width:1080px;
+      padding:.25rem .8rem .6rem;
     }
+    @media (max-width:900px){ .menu-toggle{ grid-template-columns:repeat(3, minmax(0,1fr)) !important; } }
+    @media (max-width:680px){ .menu-toggle{ grid-template-columns:repeat(2, minmax(0,1fr)) !important; } }
 
     .menu-toggle a{
-      display:inline-flex;
-      align-items:center;
-      gap:.4rem;
-      padding:.58rem 1.05rem;
-      border-radius:999px; /* pill */
+      width:100%;
+      text-align:center;
+      border-radius:999px;
+      /* <<< same palette as FOOD >>> */
+      background:
+        linear-gradient(180deg, #fcd630 0%, #8f5d10 55%, #c6901e 100%) padding-box,
+        linear-gradient(180deg, rgba(0,0,0,0.65), rgba(208,176,54,.45) 55%, rgba(140,106,19,.45)) border-box !important;
+      border:1px solid transparent !important;
+      color:#000000 !important;           /* black text like Food */
       font-weight:800;
-      font-size:.98rem;
-      text-decoration:none;
-      /* white / cream pill with slight depth */
-      background: linear-gradient(180deg, #080101, #9b5e04);
-      border:1px solid rgba(0,0,0,.08);
-      color: var(black);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 6px 14px rgba(0,0,0,.18);
-      transition: transform .14s ease, box-shadow .14s ease, filter .14s ease, color .12s ease;
+      letter-spacing:.02em;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.10),
+        0 12px 26px rgba(0,0,0,.60),
+        0 0 18px rgba(243,231,160,.16) !important;
+      transition: transform .16s ease, box-shadow .16s ease, filter .16s ease;
+      padding:.62rem 1.1rem;
     }
-
     .menu-toggle a:hover{
-      transform: translateY(-3px);
-      color: var(--gold-base);
-      box-shadow: 0 14px 28px rgba(0,0,0,.30), 0 0 18px rgba(243,231,160,.06);
+      transform:translateY(-3px);
+      filter:brightness(1.06);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 18px 34px rgba(0,0,0,.62),
+        0 0 22px rgba(243,231,160,.20) !important;
     }
-
     .menu-toggle a:active{
-      transform: scale(.985);
-      box-shadow: inset 0 -2px 0 rgba(220,190,80,.14), 0 6px 12px rgba(0,0,0,.18);
+      transform:scale(.985);
+      box-shadow:
+        inset 0 -2px 0 rgba(208,176,54,.45),
+        0 10px 20px rgba(0,0,0,.48) !important;
     }
 
-    .menu-toggle a:focus-visible{
-      outline: none;
-      box-shadow: 0 0 0 4px rgba(243,231,160,.18), 0 8px 20px rgba(0,0,0,.18);
-      border-radius: 999px;
-    }
-
-    /* Optional: keep prices snug like your home cards */
-    .food-info .gold-text{ font-weight:700; }
-
-    /* --- Tray Note fix: span full grid width --- */
-    .food-grid .tray-note{
-      grid-column: 1 / -1;
-      justify-self: center;
-    }
+    /* Tray Note (unchanged, just here for completeness) */
     .tray-note{
-      box-sizing: border-box;
-      width: min(1120px, 100% - 32px);
-      margin: 1rem auto calc(var(--bar-h) + 1.2rem);
-      padding: .85rem 1.1rem;
-      text-align: center;
-      line-height: 1.35;
-      font-weight: 600;
-      font-size: .95rem;
-      background: rgba(12,12,12,0.88);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.04);
-      color: #d9d9d9;
+      box-sizing:border-box;
+      width:min(1120px, 100% - 32px);
+      margin:1rem auto calc(var(--bar-h) + 1.2rem);
+      padding:.85rem 1.1rem;
+      text-align:center; line-height:1.35;
+      font-weight:600; font-size:.95rem;
+      background:rgba(12,12,12,0.88);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.04);
+      color:#d9d9d9;
     }
+    .food-grid .tray-note{ grid-column:1 / -1; justify-self:center; }
   </style>
 </head>
 <body class="drinks">
-  <!-- hero matches home -->
+  <!-- hero -->
   <header class="hero animate__animated animate__fadeInDown" role="banner">
     <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
     <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
   </header>
 
-  <!-- title matches home -->
+  <!-- title -->
   <div class="menu-title" aria-label="Menu">
     <h2 class="gold-text">DRINKS MENU</h2>
     <span class="menu-underline" aria-hidden="true"></span>
@@ -97,13 +90,11 @@
   <!-- category pills -->
   <nav class="menu-toggle" aria-label="Drink categories">
     <a href="./whiskey.html">Whiskey</a>
-   
     <a href="./bitters.html">Bitters/Liquor</a>
     <a href="./beer.html">Beers</a>
     <a href="./mixers.html">Soft/Mixers</a>
     <a href="./wines.html">Wines</a>
     <a href="./champagne.html">Champagne/Vodka</a>
-    
     <a href="./cognac.html">Cognac</a>
     <a href="./gin.html">Gin/Rum</a>
     <a href="./cocktails.html">Cocktails</a>
@@ -111,11 +102,9 @@
     <a href="./milkshakes.html">Milkshakes</a>
   </nav>
 
-  <!-- 4-feature preview -->
+  <!-- preview cards -->
   <main role="main">
     <div class="food-grid">
-
-      <!-- Beer -->
       <article class="food-card">
         <img src="images/beer.jpg" alt="Beer" />
         <div class="food-info">
@@ -124,19 +113,17 @@
         </div>
       </article>
 
-      <!-- Zombie -->
-      <div class="food-card">
+      <article class="food-card">
         <img src="images/zombie-cocktail.jpg" alt="Zombie Cocktail" />
         <div class="food-info">
-          <h4>Zombie</h4>
-          <p>₦6,000</p>
+          <h4 class="food-name gold-text">Zombie</h4>
+          <p class="food-price gold-text">₦6,000</p>
           <small style="display:block;color:#ccc;margin-top:4px;">
             Mixed Rum, Apricot Brandy, Falernum Liqueur, Lemon, Orange & Pineapple Juice
           </small>
         </div>
-      </div>
+      </article>
 
-      <!-- Macallan -->
       <article class="food-card">
         <img src="images/macallan-double-cask-12yrs.jpg" alt="Macallan Double Cask (12yrs)" />
         <div class="food-info">
@@ -145,7 +132,6 @@
         </div>
       </article>
 
-      <!-- Hennessy -->
       <article class="food-card">
         <img src="images/hennessy-vsop.jpg" alt="Hennessy VSOP" />
         <div class="food-info">
@@ -154,11 +140,9 @@
         </div>
       </article>
 
-      <!-- Tray note -->
       <div class="tray-note">
-         Alcohol is served to guests 18+ only — drink responsibly.
+        Alcohol is served to guests 18+ only — drink responsibly.
       </div>
-
     </div>
   </main>
 
@@ -166,7 +150,7 @@
   <nav class="bottom-nav" aria-label="Primary">
     <a href="./index.html">Home</a>
     <a href="./food.html">Food</a>
-    <a href="./drinks.html">Drinks</a>
+    <a href="./drinks.html" class="active">Drinks</a>
     <a href="./rooms.html">Rooms</a>
     <a href="./contact.html">Contact</a>
   </nav>

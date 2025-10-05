@@ -9,35 +9,40 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
   <style>
-    /* Override tray note spacing for this page */
-    .food-grid .tray-note{
+    /* Keep tray note tight to back button */
+    .food-grid .tray-note {
       grid-column: 1 / -1;
       justify-self: center;
-      margin-bottom: 0.6rem !important; /* keep it close to back button */
+      margin-bottom: 0.6rem !important;
     }
 
-    /* Back button pill style */
+    /* Updated Back Button — gold gradient consistent with drinks */
     .back-btn {
       display: inline-block;
-      margin: 0.3rem auto 1.2rem; /* sits tight under tray note */
+      margin: 0.3rem auto 1.2rem;
       padding: .6rem 1.2rem;
       border-radius: 999px;
       font-weight: 700;
       text-decoration: none;
       font-size: .95rem;
-      background: linear-gradient(180deg, #080101, #9b5e04);
-      color: #f3e7a0; /* gold text */
-      box-shadow: 0 4px 10px rgba(0,0,0,.25);
-      transition: transform .2s ease, box-shadow .2s ease;
+      background:
+        linear-gradient(180deg, #fcd630 0%, #8f5d10 55%, #c6901e 100%) padding-box,
+        linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(208,176,54,.45) 55%, rgba(140,106,19,.45)) border-box;
+      border: 1px solid transparent;
+      color: #000000;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
     }
     .back-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(0,0,0,.35);
+      filter: brightness(1.05);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 10px 20px rgba(0,0,0,.55);
     }
+    .back-btn:active { transform: scale(.985); }
   </style>
 </head>
 <body class="drinks">
-  <!-- hero matches home -->
+  <!-- hero -->
   <header class="hero animate__animated animate__fadeInDown" role="banner">
     <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
     <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
@@ -51,6 +56,7 @@
 
   <main role="main">
     <div class="food-grid">
+
       <!-- Macallan Double Cask (12yrs) -->
       <article class="food-card">
         <img src="images/macallan-12yrs.jpg" alt="Macallan Double Cask (12yrs)" />
@@ -206,23 +212,23 @@
 
       <!-- Tray note -->
       <div class="tray-note">
-        Alcohol is served to guests 18+ only—drink responsibly.
+        Alcohol is served to guests 18+ only — drink responsibly.
       </div>
 
-      <!-- Back button immediately below tray note -->
+      <!-- Back button -->
       <div style="text-align:center; grid-column: 1 / -1;">
         <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
       </div>
     </div>
   </main>
 
- <!-- Bottom nav -->
+  <!-- Bottom nav -->
   <nav class="bottom-nav" aria-label="Primary">
     <a href="./index.html">Home</a>
     <a href="./food.html">Food</a>
-    <a href="./drinks.html">Drinks</a>
+    <a href="./drinks.html" class="active">Drinks</a>
     <a href="./rooms.html">Rooms</a>
     <a href="./contact.html">Contact</a>
   </nav>
 </body>
-</html>>
+</html>

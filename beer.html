@@ -22,7 +22,7 @@
       width:100%; height:auto; display:block; object-fit:cover;
     }
 
-    /* List container styled like your reference but in Gabby's gold */
+    /* List container */
     .price-list{
       width:min(1080px, 100% - 32px);
       margin:0 auto 1.2rem;
@@ -42,7 +42,6 @@
     }
     .price-row:last-child{ border-bottom:none; }
 
-    /* Item (gold), price (white) */
     .item-name{
       margin:0;
       font-weight:900;
@@ -61,7 +60,7 @@
       white-space:nowrap;
     }
 
-    /* Back button (same pill tone you liked) */
+    /* ✅ Updated back button color to match Food pills */
     .back-btn{
       display:inline-block;
       margin:.9rem auto calc(var(--bar-h) + 1.1rem);
@@ -70,105 +69,68 @@
       font-weight:700;
       font-size:.96rem;
       text-decoration:none;
-      background:radial-gradient(120% 140% at 50% 0%, #2b1f08 0%, #a86b0a 65%, #7a4f09 100%);
-      color:#f3e7a0;
+      background:
+        linear-gradient(180deg, #fcd630 0%, #8f5d10 55%, #c6901e 100%) padding-box,
+        linear-gradient(180deg, rgba(0,0,0,0.65), rgba(208,176,54,.45) 55%, rgba(140,106,19,.45)) border-box;
+      border:1px solid transparent;
+      color:#000000; /* black text like Food */
       box-shadow:inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
-      border:1px solid rgba(243,231,160,.28);
       transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
     }
-    .back-btn:hover{ transform:translateY(-2px); filter:brightness(1.03); }
-    .back-btn:active{ transform:scale(.985); }
+    .back-btn:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.05);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 10px 20px rgba(0,0,0,.55);
+    }
+    .back-btn:active{
+      transform:scale(.985);
+      box-shadow:inset 0 -2px 0 rgba(208,176,54,.45), 0 6px 12px rgba(0,0,0,.45);
+    }
   </style>
 </head>
 <body class="drinks">
-  <!-- hero -->
   <header class="hero animate__animated animate__fadeInDown" role="banner">
     <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
     <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
   </header>
 
-  <!-- title -->
   <div class="menu-title" aria-label="Menu">
     <h2 class="gold-text">BEERS</h2>
     <span class="menu-underline" aria-hidden="true"></span>
   </div>
 
-  <!-- Wide beer image -->
   <div class="beer-hero">
     <img src="images/beer.jpg" alt="Beer" />
   </div>
 
-  <!-- Clean price list -->
   <section class="price-list" aria-label="Beer list">
-    <div class="price-row">
-      <h4 class="item-name gold-text">Heineken (Big)</h4>
-      <p class="item-price">₦2,500</p>
-    </div>
-    <div class="price-row">
-      <h4 class="item-name gold-text">Heineken (Small)</h4>
-      <p class="item-price">₦1,500</p>
-    </div>
-    <div class="price-row">
-      <h4 class="item-name gold-text">Budweiser</h4>
-      <p class="item-price">₦2,000</p>
-    </div>
-    <div class="price-row">
-      <h4 class="item-name gold-text">Smirnoff Double Black</h4>
-      <p class="item-price">₦2,500</p>
-    </div>
-    <div class="price-row">
-      <h4 class="item-name gold-text">Star Radler</h4>
-      <p class="item-price">₦1,500</p>
-    </div>
-    <div class="price-row">
-      <h4 class="item-name gold-text">Desperado</h4>
-      <p class="item-price">₦2,000</p>
-    </div>
-    <div class="price-row">
-      <h4 class="item-name gold-text">Flying Fish</h4>
-      <p class="item-price">₦2,000</p>
-    </div>
-    <div class="price-row">
-      <h4 class="item-name gold-text">Hero</h4>
-      <p class="item-price">₦2,000</p>
-    </div>
-    <div class="price-row">
-      <h4 class="item-name gold-text">Life</h4>
-      <p class="item-price">₦2,000</p>
-    </div>
-    <div class="price-row">
-      <h4 class="item-name gold-text">Medium Stout</h4>
-      <p class="item-price">₦2,000</p>
-    </div>
-    <div class="price-row">
-      <h4 class="item-name gold-text">Guinness Can</h4>
-      <p class="item-price">₦3,000</p>
-    </div>
-    <div class="price-row">
-      <h4 class="item-name gold-text">Big Stout</h4>
-      <p class="item-price">₦2,500</p>
-    </div>
-    <div class="price-row">
-      <h4 class="item-name gold-text">Tiger</h4>
-      <p class="item-price">₦2,500</p>
-    </div>
+    <div class="price-row"><h4 class="item-name gold-text">Heineken (Big)</h4><p class="item-price">₦2,500</p></div>
+    <div class="price-row"><h4 class="item-name gold-text">Heineken (Small)</h4><p class="item-price">₦1,500</p></div>
+    <div class="price-row"><h4 class="item-name gold-text">Budweiser</h4><p class="item-price">₦2,000</p></div>
+    <div class="price-row"><h4 class="item-name gold-text">Smirnoff Double Black</h4><p class="item-price">₦2,500</p></div>
+    <div class="price-row"><h4 class="item-name gold-text">Star Radler</h4><p class="item-price">₦1,500</p></div>
+    <div class="price-row"><h4 class="item-name gold-text">Desperado</h4><p class="item-price">₦2,000</p></div>
+    <div class="price-row"><h4 class="item-name gold-text">Flying Fish</h4><p class="item-price">₦2,000</p></div>
+    <div class="price-row"><h4 class="item-name gold-text">Hero</h4><p class="item-price">₦2,000</p></div>
+    <div class="price-row"><h4 class="item-name gold-text">Life</h4><p class="item-price">₦2,000</p></div>
+    <div class="price-row"><h4 class="item-name gold-text">Medium Stout</h4><p class="item-price">₦2,000</p></div>
+    <div class="price-row"><h4 class="item-name gold-text">Guinness Can</h4><p class="item-price">₦3,000</p></div>
+    <div class="price-row"><h4 class="item-name gold-text">Big Stout</h4><p class="item-price">₦2,500</p></div>
+    <div class="price-row"><h4 class="item-name gold-text">Tiger</h4><p class="item-price">₦2,500</p></div>
   </section>
 
-  <!-- Tray note -->
   <div class="tray-note">
     Alcohol is served to guests 18+ only—drink responsibly.
   </div>
 
-  <!-- Back button -->
   <div style="text-align:center;">
     <a href="./drinks.html" class="back-btn">← Back to Drinks</a>
   </div>
 
-  <!-- Bottom nav -->
   <nav class="bottom-nav" aria-label="Primary">
     <a href="./index.html">Home</a>
     <a href="./food.html">Food</a>
-    <a href="./drinks.html">Drinks</a>
+    <a href="./drinks.html" class="active">Drinks</a>
     <a href="./rooms.html">Rooms</a>
     <a href="./contact.html">Contact</a>
   </nav>
