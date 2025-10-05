@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Breakfast — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    /* Keep tray note close to the back button */
+    .food-grid .tray-note{
+      grid-column: 1 / -1;
+      justify-self: center;
+      margin-bottom: .45rem !important;
+    }
+
+    /* Back button — exact gold pill gradient you requested */
+    .back-btn{
+      display:inline-block;
+      margin:.25rem auto 1.1rem;
+      padding:.6rem 1.2rem;
+      border-radius:999px;
+      font-weight:700; font-size:.95rem; text-decoration:none;
+      background:
+        linear-gradient(180deg, #fcd630 0%, #8f5d10 55%, #c6901e 100%) padding-box,
+        linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(208,176,54,.45) 55%, rgba(140,106,19,.45)) border-box;
+      border:1px solid transparent;
+      color:#000;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
+      transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+    .back-btn:hover{ transform:translateY(-2px); filter:brightness(1.03); }
+    .back-btn:active{ transform:scale(.985); }
+
+    /* Small description text in cards */
+    .food-info small{
+      display:block; margin-top:4px; color:#cfcfcf; line-height:1.35;
+      font-size:.88rem; font-weight:600;
+    }
+  </style>
+</head>
+<body class="drinks">
+  <!-- hero -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- page title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">BREAKFAST</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <main role="main">
+    <div class="food-grid">
+      <!-- English Breakfast — ₦8,000 -->
+      <article class="food-card">
+        <img src="images/english-breakfast.jpg" alt="English Breakfast" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">English Breakfast</h4>
+          <p class="food-price gold-text">₦8,000</p>
+          <small>
+            Choice of fried, scrambled, or hard egg; sausages, baked beans, bacon, grilled tomatoes, mushrooms,
+            with French fries or toasted bread.
+          </small>
+        </div>
+      </article>
+
+      <!-- American Breakfast — ₦8,000 -->
+      <article class="food-card">
+        <img src="images/american-breakfast.jpg" alt="American Breakfast" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">American Breakfast</h4>
+          <p class="food-price gold-text">₦8,000</p>
+          <small>
+            Pancakes topped with maple syrup, scrambled or fried eggs, sausages, and rashers of bacon.
+          </small>
+        </div>
+      </article>
+
+      <!-- Nigerian Styled Breakfast — ₦8,000 -->
+      <article class="food-card">
+        <img src="images/nigerian-breakfast.jpg" alt="Nigerian Styled Breakfast" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Nigerian Styled Breakfast</h4>
+          <p class="food-price gold-text">₦8,000</p>
+          <small>
+            Option 1: Corned beef–infused egg sauce. <br/>
+            Option 2: Egg sauce (scrambled eggs in tomato sauce). <br/>
+            Served with your choice of: boiled yam, fried yam, boiled potatoes, boiled plantain, or fried plantain.
+          </small>
+        </div>
+      </article>
+
+      <!-- Tray note -->
+      <div class="tray-note">
+        Prices in Nigerian Naira (₦). Please inform us of any allergies.
+      </div>
+
+      <!-- Back button -->
+      <div style="text-align:center; grid-column:1 / -1;">
+        <a href="./food.html" class="back-btn">← Back to Food</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html" class="active">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>

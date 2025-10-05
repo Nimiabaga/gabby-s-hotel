@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finger Foods — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    /* Tray note adjustment */
+    .food-grid .tray-note{
+      grid-column: 1 / -1;
+      justify-self: center;
+      margin-bottom: .4rem !important;
+    }
+
+    /* Back button (gold gradient version) */
+    .back-btn{
+      display:inline-block;
+      margin:.25rem auto 1.1rem;
+      padding:.6rem 1.2rem;
+      border-radius:999px;
+      font-weight:700; font-size:.95rem; text-decoration:none;
+      background:
+        linear-gradient(180deg, #fcd630 0%, #8f5d10 55%, #c6901e 100%) padding-box,
+        linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(208,176,54,.45) 55%, rgba(140,106,19,.45)) border-box;
+      border:1px solid transparent;
+      color:#000;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
+      transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+    .back-btn:hover{ transform:translateY(-2px); filter:brightness(1.03); }
+    .back-btn:active{ transform:scale(.985); }
+
+    .food-info small{
+      display:block; margin-top:4px; color:#cfcfcf; line-height:1.35;
+      font-size:.88rem; font-weight:600;
+    }
+  </style>
+</head>
+
+<body class="drinks">
+  <!-- Hero -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- Title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">FINGER FOODS</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <main role="main">
+    <div class="food-grid">
+
+      <!-- BBQ Chicken Wings -->
+      <article class="food-card">
+        <img src="images/bbq-chicken-wings.jpg" alt="B.B.Q Chicken Wings" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">B.B.Q Chicken Wings</h4>
+          <p class="food-price gold-text">₦4,000</p>
+          <small>Sweet and honey-glazed chicken wings prepared in BBQ style.</small>
+        </div>
+      </article>
+
+      <!-- Chicken Drumlets -->
+      <article class="food-card">
+        <img src="images/chicken-drumlets.jpg" alt="Chicken Drumlets" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Chicken Drumlets</h4>
+          <p class="food-price gold-text">₦4,000</p>
+          <small>Battered with flour, well seasoned, and deep-fried to golden perfection.</small>
+        </div>
+      </article>
+
+      <!-- Fish Fingers -->
+      <article class="food-card">
+        <img src="images/fish-fingers.jpg" alt="Fish Fingers" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Fish Fingers</h4>
+          <p class="food-price gold-text">₦4,000</p>
+          <small>Fish fillet strips, battered and deep-fried to crisp sweetness.</small>
+        </div>
+      </article>
+
+      <!-- Butterfly Prawn -->
+      <article class="food-card">
+        <img src="images/butterfly-prawn.jpg" alt="Butterfly Prawn" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Butterfly Prawn</h4>
+          <p class="food-price gold-text">₦6,000</p>
+          <small>Sweet, seasoned prawn in butterfly shape — deliciously tender and juicy.</small>
+        </div>
+      </article>
+
+      <!-- Spring Roll -->
+      <article class="food-card">
+        <img src="images/spring-roll.jpg" alt="Spring Roll" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Spring Roll</h4>
+          <p class="food-price gold-text">₦4,000</p>
+          <small>Served crispy with a side of hot chili sauce.</small>
+        </div>
+      </article>
+
+      <!-- Samosa -->
+      <article class="food-card">
+        <img src="images/samosa.jpg" alt="Samosa" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Samosa</h4>
+          <p class="food-price gold-text">₦4,000</p>
+          <small>Golden, crispy triangles filled with spicy savory goodness. Comes with hot chili sauce.</small>
+        </div>
+      </article>
+
+      <!-- Spicy Chicken Kebab -->
+      <article class="food-card">
+        <img src="images/spicy-chicken-kebab.jpg" alt="Spicy Chicken Kebab" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Spicy Chicken Kebab</h4>
+          <p class="food-price gold-text">₦4,000</p>
+          <small>Fresh spicy chicken cubes seasoned with ginger, garlic, and vegetables in hot chili.</small>
+        </div>
+      </article>
+
+      <!-- Peppered Chicken -->
+      <article class="food-card">
+        <img src="images/peppered-chicken.jpg" alt="Peppered Chicken" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Peppered Chicken</h4>
+          <p class="food-price gold-text">₦5,000</p>
+          <small>Juicy chicken thighs or breast seasoned with garlic and braised in tomato and chili sauce.</small>
+        </div>
+      </article>
+
+      <!-- Chicken and Chips -->
+      <article class="food-card">
+        <img src="images/chicken-and-chips.jpg" alt="Chicken and Chips" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Chicken and Chips</h4>
+          <p class="food-price gold-text">₦8,000</p>
+          <small>Well-seasoned chicken served with French fries and ketchup on the side.</small>
+        </div>
+      </article>
+
+      <!-- Tray Note -->
+      <div class="tray-note">
+        Prices are in Nigerian Naira (₦). Served with optional chili sauce or dips.
+      </div>
+
+      <!-- Back Button -->
+      <div style="text-align:center; grid-column:1 / -1;">
+        <a href="./food.html" class="back-btn">← Back to Food</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html" class="active">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>

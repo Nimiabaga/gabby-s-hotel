@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Continental Dishes — Gabby's Boutique Hotel & Lounge</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    .food-grid {
+      width: min(1080px, 100% - 32px);
+      margin: 0 auto 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+    }
+
+    .food-card {
+      background: #0f0f0f;
+      border: 1px solid rgba(243,231,160,.45);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .food-info {
+      padding: 1rem 1.2rem;
+      text-align: left;
+    }
+
+    .food-name {
+      margin: 0 0 .25rem;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .food-price {
+      margin: 0 0 .4rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #f3e7a0;
+    }
+
+    .food-desc {
+      color: #ccc;
+      font-size: .9rem;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    /* Tray note */
+    .tray-note {
+      grid-column: 1 / -1;
+      text-align: center;
+      font-weight: 600;
+      margin-top: .8rem;
+      margin-bottom: .4rem;
+    }
+
+    /* Back button with gold gradient */
+    .back-btn {
+      display: inline-block;
+      margin: .25rem auto 1.1rem;
+      padding: .6rem 1.3rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: .95rem;
+      text-decoration: none;
+      background:
+        linear-gradient(180deg, #fcd630 0%, #8f5d10 55%, #c6901e 100%) padding-box,
+        linear-gradient(180deg, rgba(0,0,0,0.65), rgba(208,176,54,.45) 55%, rgba(140,106,19,.45)) border-box;
+      border: 1px solid transparent;
+      color: #000;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+
+    .back-btn:hover { transform: translateY(-2px); filter: brightness(1.03); }
+    .back-btn:active { transform: scale(.985); }
+  </style>
+</head>
+
+<body class="drinks">
+  <!-- Hero -->
+  <header class="hero animate__animated animate__fadeInDown" role="banner">
+    <img src="images/gabby-logo.png" alt="Gabby's Boutique Hotel & Lounge" class="logo" />
+    <p class="tagline gold-text">Serene Luxury, Private Bliss</p>
+  </header>
+
+  <!-- Title -->
+  <div class="menu-title" aria-label="Menu">
+    <h2 class="gold-text">CONTINENTAL</h2>
+    <span class="menu-underline" aria-hidden="true"></span>
+  </div>
+
+  <main role="main">
+    <div class="food-grid">
+
+      <!-- ===== BEEF SECTION ===== -->
+      <article class="food-card">
+        <img src="images/shredded-beef-sauce.jpg" alt="Shredded Beef Sauce" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Shredded Beef Sauce</h4>
+          <p class="food-price">₦6,000</p>
+          <p class="food-desc">Beef, onion, ginger, and green pepper garnished together with hot pepper for a spicy, flavorful delight.</p>
+        </div>
+      </article>
+
+      <article class="food-card">
+        <img src="images/beef-stroganoff.jpg" alt="Beef Stroganoff" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Beef Stroganoff</h4>
+          <p class="food-price">₦8,000</p>
+          <p class="food-desc">A Russian specialty — tender beef strips cooked in a creamy brandy-flavored sauce.</p>
+        </div>
+      </article>
+
+      <article class="food-card">
+        <img src="images/jamaican-beef-stir-fry.jpg" alt="Jamaican Beef Stir Fry" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Jamaican Beef Stir Fry</h4>
+          <p class="food-price">₦6,000</p>
+          <p class="food-desc">Succulent beef strips stir-fried with a medley of colorful, crunchy vegetables.</p>
+        </div>
+      </article>
+
+      <!-- ===== PORK SECTION ===== -->
+      <article class="food-card">
+        <img src="images/pork-chops.jpg" alt="Pork Chops" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Pork Chops</h4>
+          <p class="food-price">₦9,000</p>
+          <p class="food-desc">Hot and spicy honey-glazed pork chops grilled to perfection for a rich, smoky flavor.</p>
+        </div>
+      </article>
+
+      <article class="food-card">
+        <img src="images/pork-stir-fry.jpg" alt="Pork Stir Fry" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Pork Stir Fry</h4>
+          <p class="food-price">₦9,000</p>
+          <p class="food-desc">A delightful mix of honey and vegetables that makes this a truly fabulous dish.</p>
+        </div>
+      </article>
+
+      <article class="food-card">
+        <img src="images/sweet-sour-pork.jpg" alt="Sweet and Sour Pork" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Sweet and Sour Pork</h4>
+          <p class="food-price">₦9,000</p>
+          <p class="food-desc">Pork, carrots, pineapple, and green pepper in a deliciously tangy sweet-and-sour sauce.</p>
+        </div>
+      </article>
+
+      <article class="food-card">
+        <img src="images/spare-ribs.jpg" alt="Spare Ribs" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Spare Ribs</h4>
+          <p class="food-price">₦10,000</p>
+          <p class="food-desc">Sumptuous pork ribs barbecued to perfection — tender, juicy, and flavorful.</p>
+        </div>
+      </article>
+
+      <!-- Tray Note -->
+      <div class="tray-note">
+        Served with side vegetables or sauce of your choice. Prices are in Nigerian Naira (₦).
+      </div>
+
+      <!-- Back Button -->
+      <div style="text-align:center; grid-column:1 / -1;">
+        <a href="./food.html" class="back-btn">← Back to Food</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a href="./index.html">Home</a>
+    <a href="./food.html" class="active">Food</a>
+    <a href="./drinks.html">Drinks</a>
+    <a href="./rooms.html">Rooms</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</body>
+</html>
