@@ -45,15 +45,12 @@
 
     /* Layout: center Champagne on larger screens */
     @media (min-width: 900px){
-      .grid-center{
-        grid-column: 2;
-      }
-      body.drinks .food-grid{
-        grid-template-columns: repeat(3, 1fr);
-      }
+      .grid-center{ grid-column: 2; }
+      body.drinks .food-grid{ grid-template-columns: repeat(3, 1fr); }
     }
   </style>
 </head>
+
 <body class="drinks">
   <!-- hero -->
   <header class="hero animate__animated animate__fadeInDown" role="banner">
@@ -69,7 +66,7 @@
 
   <main role="main">
     <div class="food-grid">
-      <!-- Champagne (center on desktop) -->
+      <!-- Champagne -->
       <article class="food-card grid-center">
         <img src="images/vueve-cliquote.jpg" alt="Vueve Cliquote Brut" />
         <div class="food-info">
@@ -78,7 +75,15 @@
         </div>
       </article>
 
-      <!-- Vodka -->
+      <article class="food-card">
+        <img src="images/belaire-champagne.jpg" alt="Belaire Champagne" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Belaire Champagne</h4>
+          <p class="food-price gold-text">₦90,000</p>
+        </div>
+      </article>
+
+      <!-- Vodkas -->
       <article class="food-card">
         <img src="images/absolute-vodka.jpg" alt="Absolute Vodka" />
         <div class="food-info">
@@ -95,9 +100,25 @@
         </div>
       </article>
 
+      <article class="food-card">
+        <img src="images/smirnoff-small.jpg" alt="Smirnoff Vodka (Small)" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Smirnoff Vodka (Small)</h4>
+          <p class="food-price gold-text">₦5,000</p>
+        </div>
+      </article>
+
+      <article class="food-card">
+        <img src="images/black-bullet-vodka.jpg" alt="Black Bullet Vodka" />
+        <div class="food-info">
+          <h4 class="food-name gold-text">Black Bullet Vodka</h4>
+          <p class="food-price gold-text">₦3,000</p>
+        </div>
+      </article>
+
       <!-- Tray note -->
       <div class="tray-note">
-        Alcohol is served to guests 18+ only—drink responsibly.
+        Alcohol is served to guests 18+ only — drink responsibly.
       </div>
 
       <!-- Back button -->
