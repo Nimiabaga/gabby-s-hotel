@@ -94,6 +94,26 @@
     }
     .map-wrap iframe{ width:100%; height:380px; border:0; display:block; }
 
+    /* Directions button row */
+    .dir-row{
+      display:flex; justify-content:center; padding:.75rem 1rem 1rem;
+      gap:.6rem; flex-wrap:wrap;
+    }
+    .dir-btn{
+      display:inline-block;
+      padding:.66rem 1.15rem;
+      border-radius:999px;
+      font-weight:800; font-size:.95rem; text-decoration:none;
+      background:
+        linear-gradient(180deg, #fcd630 0%, #8f5d10 55%, #c6901e 100%) padding-box,
+        linear-gradient(180deg, rgba(0,0,0,0.65), rgba(208,176,54,.45) 55%, rgba(140,106,19,.45)) border-box;
+      border:1px solid transparent; color:#000;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 6px 16px rgba(0,0,0,.45);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+    .dir-btn:hover{ transform:translateY(-2px); filter:brightness(1.04); }
+    .dir-btn:active{ transform:scale(.985); }
+
     /* Social buttons */
     .social-row{
       grid-column: 1 / -1;
@@ -243,6 +263,15 @@
         referrerpolicy="no-referrer-when-downgrade"
         src="https://www.google.com/maps?q=Plot%2011%20Primegate%20Avenue%2C%20off%20Eliozu%2FChief%20G.U%20Ake%20Road%2C%20Port%20Harcourt&output=embed">
       </iframe>
+
+      <!-- Get Directions button -->
+      <div class="dir-row">
+        <a
+          class="dir-btn"
+          href="https://www.google.com/maps/dir/?api=1&destination=Plot%2011%20Primegate%20Avenue%2C%20off%20Eliozu%2FChief%20G.U%20Ake%20Road%2C%20Port%20Harcourt%2C%20Rivers%20State%2C%20Nigeria"
+          target="_blank" rel="noopener"
+        >🧭 Get Directions</a>
+      </div>
     </div>
   </section>
 
